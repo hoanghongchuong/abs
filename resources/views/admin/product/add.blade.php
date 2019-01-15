@@ -28,9 +28,9 @@
 	                <ul class="nav nav-tabs">
 	                  	<li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">Thông tin chung</a></li>
 	                  	
-	                  	<li><a href="#tab_2" data-toggle="tab" aria-expanded="true">Nội dung</a></li>
-	                  	<li><a href="#tab_5" data-toggle="tab" aria-expanded="true">Album hình</a></li>
-	                  	<li><a href="#tab_3" data-toggle="tab" aria-expanded="true">SEO</a></li>
+	                  	<!-- <li><a href="#tab_2" data-toggle="tab" aria-expanded="true">Nội dung</a></li> -->
+	                  	<!-- <li><a href="#tab_5" data-toggle="tab" aria-expanded="true">Album hình</a></li> -->
+	                  	<!-- <li><a href="#tab_3" data-toggle="tab" aria-expanded="true">SEO</a></li> -->
 	                </ul>
 	                <div class="tab-content">
 	                  	<div class="tab-pane active" id="tab_1">
@@ -43,14 +43,14 @@
 						        			@endforeach
 						        		</div>
 						        	@endif
-									<div class="form-group col-md-12 @if ($errors->first('fImages')!='') has-error @endif">
+									<!-- <div class="form-group col-md-12 @if ($errors->first('fImages')!='') has-error @endif">
 										<label for="file">File ảnh</label>
 								     	<input type="file" id="file" name="fImages" >
 								    	<p class="help-block">Width:225px - Height: 162px</p>
 								    	@if ($errors->first('fImages')!='')
 								      	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> {!! $errors->first('fImages'); !!}</label>
 								      	@endif
-									</div>
+									</div> -->
 									<div class="clearfix"></div>
 									<div class="form-group">
 								      	<label for="ten">Danh mục cha</label>
@@ -75,31 +75,43 @@
 								      	@endif
 									</div>
 									<div class="form-group">
-								      	<label for="ten">Giá bán</label>
+								      	<label for="ten">Mức lương</label>
 								      	<input type="text" name="txtPrice"  onkeyup="FormatNumber(this);"  onKeyPress="return isNumberKey(event)" value=""  class="form-control" />
 									</div>
-									<div class="form-group">
+									<!-- <div class="form-group">
 								      	<label for="ten">Giá cũ</label>
 								      	<input type="text" name="txtPriceOld"  onkeyup="FormatNumber(this);"  onKeyPress="return isNumberKey(event)" value=""  class="form-control" />
-									</div>
-									
+									</div> -->
 									
 								</div>
+
 								<div class="col-md-6 col-xs-12">
-									<div class="form-group">
+									<!-- <div class="form-group">
 								      	<label for="desc">Mô tả</label>
 								      	<textarea name="txtDesc" rows="5" id="txtContent" class="form-control"></textarea>
+									</div> -->
+									<div class="form-group">
+								      	<label for="ten">Số lượng</label>
+								      	<input type="text" name="numb" value=""  class="form-control" />
+									</div>
+									<div class="form-group">
+								      	<label for="ten">Địa điểm</label>
+								      	<input type="text" name="address" value=""  class="form-control" />
+									</div>
+									<div class="form-group">
+								      	<label for="ten">Ngày thi tuyển</label>
+								      	<input type="date" name="date_test" value=""  class="form-control" />
 									</div>
 								</div>
 								
 							</div>
-							<div class="col-md-6 col-xs-12">								
+							<!-- <div class="col-md-6 col-xs-12">								
 								<div class="form-group">
 							      	<label for="ten">Mã SP</label>
 							      	<input type="text" name="txtCode"  value=""  class="form-control" />
 								</div>							
 								
-							</div>
+							</div> -->
 							
 							<div class="clearfix"></div>
 	                  	</div><!-- /.tab-pane -->

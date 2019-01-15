@@ -125,7 +125,7 @@
 			    <div class="box-footer col-md-12 row">
 					<div class="col-md-6">
 				    	<button type="submit" class="btn btn-primary">Cập nhật</button>
-				    	<button type="button" onclick="javascript:window.location='backend/productcate'" class="btn btn-danger">Thoát</button>
+				    	<button type="button" onclick="javascript:window.location='backend/productcate?type={{ @$_GET[type] }}'" class="btn btn-danger">Thoát</button>
 			    	</div>
 			  	</div>
 		    </form>

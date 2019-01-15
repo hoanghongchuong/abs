@@ -77,7 +77,7 @@
                 <td>
                   <p>{{$item->name}}</p>                   
                 </td>
-                <td><img src="{{asset('upload/product/'.$item->photo)}}"></td>
+                <td><img src="{{asset('upload/product/'.$item->photo)}}" style="width: 100px;"></td>
                 <td class="text-center with_dieuhuong">
                   @if($item->status>0)
                     <a href="backend/productcate/edit?id={{$item->id}}&hienthi={{ time() }}" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i> Bật</a>
@@ -86,7 +86,7 @@
                   @endif
                 </td>
                 <td class="text-center with_dieuhuong">
-                  <i class="fa fa-pencil fa-fw"></i><a href="backend/productcate/edit?id={{$item->id}}">Edit</a>
+                  <i class="fa fa-pencil fa-fw"></i><a href="backend/productcate/edit?id={{$item->id}}&type={{ @$_GET['type'] }}">Edit</a>
                 </td>
                 <td class="text-center">
                   <i class="fa fa-trash-o fa-fw"></i><a onClick="if(!confirm('Xác nhận xóa')) return false;" href="backend/productcate/{{$item->id}}/delete">Delete</a>
