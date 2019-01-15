@@ -291,6 +291,15 @@ Route::group(['middleware' =>'authen', 'prefix' => 'backend'], function(){
 		Route::get('delete/{id}',['as'=>'admin.district.delete', 'uses' => 'Admin\DistrictController@delete']);
 	});
 
+	Route::group(['prefix' => 'gioithieu'], function(){
+		Route::get('/',['as'=>'admin.gioithieu.index', 'uses' => 'Admin\GioiThieuController@index']);
+		Route::get('add',['as'=>'admin.gioithieu.getCreate', 'uses' => 'Admin\GioiThieuController@getAdd']);
+		Route::post('add',['as'=>'admin.gioithieu.postAdd', 'uses' => 'Admin\GioiThieuController@postAdd']);
+		Route::get('edit/{id}',['as'=>'admin.gioithieu.getEdit', 'uses' => 'Admin\GioiThieuController@getEdit']);
+		Route::post('edit/{id}',['as'=>'admin.gioithieu.postEdit', 'uses' => 'Admin\GioiThieuController@postEdit']);
+		Route::get('delete/{id}',['as'=>'admin.province.delete', 'uses' => 'Admin\GioiThieuController@delete']);
+	});
+
 	Route::group(['prefix'=>'chinhanh'], function(){
 		Route::get('/',['as'=>'admin.chinhanh.index','uses'=>'Admin\ChiNhanhController@index']);
 		Route::get('create',['as'=>'admin.chinhanh.create','uses'=>'Admin\ChiNhanhController@getCreate']);

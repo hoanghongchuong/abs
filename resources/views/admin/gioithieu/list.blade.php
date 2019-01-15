@@ -32,7 +32,7 @@
                 <th class="text-center with_dieuhuong">Stt</th>
                 
                 <th>Tên</th>
-                <!-- <th>Hình ảnh</th> -->
+                <th>Hình ảnh</th>
                 <!-- <th class="text-center with_dieuhuong">Hoạt động</th> -->
                 <th class="text-center with_dieuhuong">Sửa</th>
                 <th class="text-center with_dieuhuong">Xóa</th>
@@ -47,7 +47,7 @@
                   {{$item->name}}<br>
                   <p><a href="{{url('gioi-thieu/'.$item->alias)}}" target="_blank" title="">{{url('gioi-thieu/'.$item->alias)}}</a></p>
                 </td>
-                
+                <td><img src="{{asset('upload/banner/'.$item->image)}}"></td>
                 <td class="text-center with_dieuhuong">
                   <i class="fa fa-pencil fa-fw"></i><a href="backend/gioithieu/edit/{{$item->id}}">Edit</a>
                 </td>

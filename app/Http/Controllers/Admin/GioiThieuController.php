@@ -25,6 +25,7 @@ class GioiThieuController extends Controller
             $img_name=time().'_'.$img->getClientOriginalName();
             $img->move($path_img,$img_name);
         }
+        // dd($img_name);
     	$data = new GioiThieu;
     	$data->name = $request->txtName;
     	 if($request->txtAlias){
@@ -43,6 +44,7 @@ class GioiThieuController extends Controller
         }else{
             $data->status = 0;
         }
+
         $data->save();
     	return redirect()->route('admin.gioithieu.index')->with('status','Thêm thành công');
     }

@@ -4,38 +4,23 @@
         <ul class="sidebar-menu">
             <!-- <li class="header">MAIN NAVIGATION</li> -->
             
-            <!-- <li class="treeview {{@$_GET['type'] == 'san-pham' ? 'active' : '' }}">
+            <li class="treeview {{@$_GET['type'] == 'san-pham' ? 'active' : '' }}">
               <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Sản phẩm</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-dashboard"></i> <span>Đơn hàng</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="backend/productcate?type=san-pham"><i class="fa fa-circle-o"></i> <span>Danh mục sản phẩm</span></a></li>
+                <li><a href="backend/productcate?type=san-pham"><i class="fa fa-circle-o"></i> <span>Danh mục </span></a></li>
                 <li><a href="backend/product?type=san-pham"><i class="fa fa-circle-o"></i> <span>Danh sách</span></a></li>
                
               </ul>
-            </li> -->
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Thiết kế</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="backend/newscate?type=thiet-ke"><i class="fa fa-circle-o"></i> <span>Danh mục</span></a></li>
-                <li><a href="backend/news?type=thiet-ke"><i class="fa fa-circle-o"></i> <span>Danh sách</span></a></li>               
-              </ul>
             </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Thi công</span> <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="backend/newscate?type=thi-cong"><i class="fa fa-circle-o"></i> <span>Danh mục</span></a></li>
-                <li><a href="backend/news?type=thi-cong"><i class="fa fa-circle-o"></i> <span>Danh sách</span></a></li>               
-              </ul>
-            </li>
-            <li><a href="backend/news?type=anh-cong-trinh"><i class="fa fa-circle-o"></i> <span>Ảnh trông trình</span></a></li>
+                       
+            
+            <li><a href="backend/gioithieu"><i class="fa fa-circle-o"></i> <span>Giới thiệu</span></a></li>
+            
             <!-- <li><a href="backend/orders"><i class="fa fa-shopping-cart"></i> <span>Quản lý đơn hàng</span></a></li> -->
-            <li><a href="backend/about/edit?type=gioi-thieu"><i class="fa fa-circle-o"></i> <span>Giới thiệu</span></a></li>
-            <li><a href="backend/about/edit?type=bao-gia"><i class="fa fa-circle-o"></i> <span>Báo giá</span></a></li>
+            <!-- <li><a href="backend/about/edit?type=gioi-thieu"><i class="fa fa-circle-o"></i> <span>Giới thiệu</span></a></li> -->
+           
             <li><a href="backend/news?type=tin-tuc"><i class="fa fa-circle-o"></i> <span>Tin tức</span></a></li>
             <!-- <li><a href="backend/partner"><i class="fa fa-circle-o"></i> <span>Quản lý đối tác</span></a></li> -->
             <!-- <li><a href="backend/feedback"><i class="fa fa-gear" aria-hidden="true"></i> <span>Ý kiến khách hàng</span></a></li> -->

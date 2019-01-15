@@ -42,7 +42,7 @@
 								      	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> {!! $errors->first('fImages'); !!}</label>
 								      	@endif
 									</div>
-			                    	<div class="form-group">
+			                    	<div class="form-group hidden">
 								      	<label for="ten">Danh mục cha</label>
 								      	<select name="txtProductCate" class="form-control">
 								      		<option value="0">Chọn danh mục</option>
@@ -103,11 +103,11 @@
 					      <input type="number" min="1" name="stt" value="{!! count($parent)+1 !!}" class="form-control" style="width: 100px;">
 				    </div>
 				    
-				    <div class="form-group">
+				    <!-- <div class="form-group">
 					    <label>
 				        	<input type="checkbox" name="noibat"> Hiển thị trang chủ
 				    	</label>
-				    </div>
+				    </div> -->
 				   
 				    <div class="form-group">
 					    <label>
