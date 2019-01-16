@@ -24,7 +24,9 @@
             <li><a href="backend/news?type=tin-tuc"><i class="fa fa-circle-o"></i> <span>Tin tức</span></a></li>
             <!-- <li><a href="backend/partner"><i class="fa fa-circle-o"></i> <span>Quản lý đối tác</span></a></li> -->
             <!-- <li><a href="backend/feedback"><i class="fa fa-gear" aria-hidden="true"></i> <span>Ý kiến khách hàng</span></a></li> -->
+            <li><a href="backend/news?type=hinh-anh"><i class="fa fa-circle-o"></i> <span>Hình ảnh</span></a></li>
             <li><a href="backend/video"><i class="fa fa-circle-o"></i> <span>Video</span></a></li>
+             <!-- <li><a href="backend/lienket?type=hinh-anh"><i class="fa fa-gear" aria-hidden="true"></i> <span>Hình ảnh</span></a></li> -->
             <li><a href="backend/contact"><i class="fa fa-envelope"></i> <span>Quản lý liên hệ</span></a></li>
             <!-- <li><a href="backend/newsletter?type=newsletter"><i class="fa fa-circle-o"></i> <span>Đăng ký nhận tin</span></a></li> -->
             <!-- <li><a href="backend/chinhanh"><i class="fa fa-envelope"></i><span>Quản lý cửa hàng</span></a></li> -->
@@ -38,7 +40,7 @@
               <ul class="treeview-menu">            
                 
                 <li><a href="backend/banner"><i class="fa fa-gear" aria-hidden="true"></i> <span>Quản lý banner</span></a></li>
-                <li><a href="backend/lienket?type=quang-cao"><i class="fa fa-gear" aria-hidden="true"></i> <span>Quản lý quảng cáo</span></a></li>
+               
                 <li><a href="backend/position"><i class="fa fa-gear" aria-hidden="true"></i> <span>Vị trí quảng cáo</span></a></li>
               </ul>
             </li> -->

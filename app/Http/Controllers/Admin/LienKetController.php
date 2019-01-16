@@ -13,11 +13,9 @@ class LienKetController extends Controller
     public function getList()
     {  
         if($_GET['type']=='slider') $trang='slider';
-        else if($_GET['type']=='doi-tac') $trang='đối tác';
+        else if($_GET['type']=='hinh-anh') $trang='Hình ảnh';
         else if($_GET['type']=='cam-nhan') $trang='cảm nhận khách hàng';
-        else if($_GET['type']=='chuyen-muc') $trang='banner chuyên mục';
-        else if($_GET['type']=='chi-nhanh') $trang='chi nhánh';
-        else if($_GET['type']=='catalog') $trang='catalog';
+        
         else $trang ='hình ảnh';
         if(!empty($_GET['type'])){
             $com=$_GET['type'];
@@ -32,9 +30,7 @@ class LienKetController extends Controller
         if($_GET['type']=='slider') $trang='slider';
         else if($_GET['type']=='doi-tac') $trang='đối tác';
         else if($_GET['type']=='cam-nhan') $trang='cảm nhận khách hàng';
-        else if($_GET['type']=='chuyen-muc') $trang='banner chuyên mục';
-        else if($_GET['type']=='chi-nhanh') $trang='chi nhánh';
-        else if($_GET['type']=='catalog') $trang='catalog';
+        
         else $trang ='hình ảnh';
 
         if(!empty($_GET['type'])){

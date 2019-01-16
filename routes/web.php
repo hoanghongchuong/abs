@@ -15,6 +15,8 @@
 
 Route::get('/', ['as'=>'index', 'uses'=>'IndexController@index']);
 Route::get('gioi-thieu',['as'=>'getAbout', 'uses'=>'IndexController@getAbout']);
+Route::get('gioi-thieu/{alias}', 'IndexController@detailAbout');
+
 Route::post('cartajax/add', ['as' => 'addProductToCartAjax', 'uses' => 'IndexController@addCartAjax']);
 
 Route::get('lien-he',['as'=>'getContact', 'uses'=>'ContactController@getContact']);

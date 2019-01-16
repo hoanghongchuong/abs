@@ -27,8 +27,10 @@
       			<div class="nav-tabs-custom">
 	                <ul class="nav nav-tabs">
 	                  	<li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">Thông tin chung</a></li>
+	                  	@if($_GET['type']!='hinh-anh')
 	                  	<li><a href="#tab_2" data-toggle="tab" aria-expanded="true">Nội dung</a></li>
-	                  	@if($_GET['type']=='du-an')
+	                  	@endif
+	                  	@if($_GET['type']=='hinh-anh')
 	                  	<li><a href="#tab_5" data-toggle="tab" aria-expanded="true">Album ảnh</a></li>
 	                  	@endif
 	                  	<li><a href="#tab_3" data-toggle="tab" aria-expanded="true">SEO</a></li>
@@ -79,12 +81,12 @@
 								      	<label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> {!! $errors->first('txtAlias'); !!}</label>
 								      	@endif
 									</div>
-									
+									@if($_GET['type']!='hinh-anh')
 									<div class="form-group">
 								      	<label for="desc">Mô tả</label>
 								      	<textarea name="txtDesc"  rows="5" class="form-control"></textarea>
 									</div>
-									
+									@endif
 									
 								</div>
 								<!-- <div class="col-md-6 col-xs-12">

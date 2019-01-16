@@ -30,18 +30,21 @@
     <meta name="geo.placename" content="Hà Nội" />
     <meta name="Area" content="HoChiMinh, Saigon, Hanoi, Danang, Vietnam" />    
     <link rel="shortcut icon" href="{!! asset('upload/hinhanh/'.$setting->favico) !!}" type="image/png" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/animate.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/owl.carousel.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/font-awesome.min.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/jquery.bxslider.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/jquery.fancybox.min.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/slick.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/style.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/phone.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/cus.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/responsive.css')}}" />
-        
+    
+    <link href="{{asset('public/css/bootstrap.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('public/css/font-awesome.css')}}" rel="stylesheet"/>
+    <link href="{{asset('public/css/owl.carousel.css')}}" rel="stylesheet"/>
+    <link href="{{asset('public/css/owl.theme.css')}}" rel="stylesheet"/>
+    <link href="{{asset('public/css/animate.css')}}" rel="stylesheet"/>
+    <link href="{{asset('public/css/menu-2.css')}}" rel="stylesheet"/>
+    <link href="{{asset('public/css/style_menu_right.css')}}" rel="stylesheet"/>
+    <link href="{{asset('public/css/style00.css')}}" rel="stylesheet"/>
+    <link href="{{asset('public/css/setmedia.css')}}" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="{{asset('public/css/jquery.animateSlider.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/demo1.css')}}">
+    
+    <script type="text/javascript" src="{{asset('public/js/jquery-1.11.1.min.js')}}"></script>        
     <script type="text/javascript">
         function baseUrl(){
             return '<?php echo url('/'); ?>';
@@ -68,12 +71,28 @@
     {!! $setting->codechat !!}
     {{ $setting->analytics }}
     @yield('script')
-    <script src="{{ asset('public/js/jquery-2.1.4.min.js')}}"></script>
-    <script src="{{ asset('public/js/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('public/js/owl.carousel.min.js')}}"></script>
-    <script src="{{ asset('public/js/slick.min.js')}}"></script>
-    <script src="{{ asset('public/js/jquery.fancybox.min.js')}}"></script>
-    <script src="{{ asset('public/js/script.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('public/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('public/js/menu-2.js')}}"></script>
+    <script type="text/javascript" src="{{asset('public/js/style-img.js')}}"></script>
+    <script type="text/javascript" src="{{asset('public/js/wow.min.js')}}"></script>
+    <script src="{{asset('public/js/modernizr.custom.js')}}"></script>
+   <!-- Load the plugin -->
+    <script src="{{asset('public/js/jquery.animateSlider.js')}}"></script>
+
+    <!-- Page Scroll to id plugin -->
+      <script src="{{asset('public/js/menu_right.js')}}"></script>
+     
+      <script type="text/javascript " src="{{asset('public/js/add-js.js')}}"></script>
+      <script type="text/javascript " src="{{asset('public/js/owl.carousel.js')}} "></script>
+      </footer>
+      <!--Phần lien quan đến đăng nhập giỏ hàng không được xóa-->
+      <script type="text/javascript" src="{{asset('public/js/init.js')}}"></script>
+      <link rel="stylesheet" href="{{asset('public/js/validationEngine.jquery.css')}}">
+      <script src="{{asset('public/js/jquery.validationEngine-vi.js')}}" charset="utf-8"></script>
+      <script src="{{asset('public/js/jquery.validationEngine.js')}}"></script>
+     
+    <script>
+         new WOW().init();
+    </script>
 </body>
 </html>

@@ -36,23 +36,22 @@ class IndexController extends Controller {
 	 */
 	public function index()
 	{
-		$news = DB::table('news')->where('status',1)->where('com','tin-tuc')->take(4)->orderBy('id','desc')->get();
+		$news = DB::table('news')->where('status',1)->where('com','tin-tuc')->take(8)->orderBy('id','desc')->get();
 		$products = DB::table('products')->where('status',1)->take(20)->orderBy('id','desc')->get();
-		$categories_design_home = DB::table('news_categories')->where('status',1)->where('com','thiet-ke')
-		->where('hot',1)->take(2)->get();
 		
 		$setting =DB::table('setting')->select()->where('id',1)->get()->first();
 		$about = DB::table('about')->where('com','gioi-thieu')->first();
+		$list_abouts = DB::table('gioithieu')->get();
 		$products = DB::table('news')->where('status',1)->where('com','anh-cong-trinh')->take(5)->orderBy('id','desc')->get();
 		$video = DB::table('video')->first();
-
+		$about_first = DB::table('gioithieu')->first();
 		$title = $setting->title;
 		$keyword = $setting->keyword;
 		$description = $setting->description;		
 		$com = 'index';
 		// End cấu hình SEO
 		$img_share = asset('upload/hinhanh/'.$setting->photo);
-		return view('templates.index_tpl', compact('com','keyword','description','title','img_share','partners','products','categories_home','categories_design_home','news','about','video'));
+		return view('templates.index_tpl', compact('com','keyword','description','title','img_share','partners','products','categories_home','about_first','news','about','video','list_abouts'));
 	}
 	public function getProduct(Request $req)
 	{
@@ -160,6 +159,17 @@ class IndexController extends Controller {
 		// End cấu hình SEO
 
 		return view('templates.about_tpl', compact('about','keyword','description','title','img_share','com'));
+	}
+	public function detailAbout($alias)
+	{
+		$about = DB::table('gioithieu')->where('alias', $alias)->first();
+
+		$list_abouts = DB::table('gioithieu')->get();
+
+		$title = $about->name;
+		$description = $about->description;
+		$keyword = $about->keyword;
+		return view('templates.detail_about', compact('title','description','keyword', 'about','list_abouts'));
 	}
 	public function baogia()
 	{

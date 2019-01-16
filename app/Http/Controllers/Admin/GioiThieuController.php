@@ -25,6 +25,13 @@ class GioiThieuController extends Controller
             $img_name=time().'_'.$img->getClientOriginalName();
             $img->move($path_img,$img_name);
         }
+
+        $img_bg = $request->file('fImages_bg');       
+        $img_name_bg='';
+        if(!empty($img_bg)){
+            $img_name_bg=time().'_'.$img_bg->getClientOriginalName();
+            $img_bg->move($path_img,$img_name_bg);
+        }
         // dd($img_name);
     	$data = new GioiThieu;
     	$data->name = $request->txtName;
@@ -65,6 +72,19 @@ class GioiThieuController extends Controller
                 File::delete($img_current);
             }
         }
+
+        $img_bg = $request->file('fImages_bg');
+        $img_current_bg = 'upload/banner/'.$request->img_current_bg;
+        if(!empty($img_bg)){
+            $path_img='upload/banner';
+            $img_name_bg=time().'_'.$img_bg->getClientOriginalName();
+            $img_bg->move($path_img,$img_name_bg);
+            $data->photo = $img_name_bg;
+            if (File::exists($img_current_bg)) {
+                File::delete($img_current_bg);
+            }
+        }
+
         $data->name = $request->txtName;
         if($request->txtAlias){
                 $data->alias = $request->txtAlias;
