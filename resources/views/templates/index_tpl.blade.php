@@ -12,14 +12,14 @@ $sliders = DB::table('slider')->select()->where('status',1)->where('com','gioi-t
                <ul class="anim-slider-23">
                   <li class="anim-slide" style=" min-height: 690px;
                      max-height: 720px;">
-                     <img src="{{asset('public/images/ABS_logo_15.png')}}" style="width:500px;top: 190px; right:10px" id="logochim">    
+                     <!-- <img src="{{asset('public/images/ABS_logo_15.png')}}" style="width:500px;top: 190px; right:10px" id="logochim">    
                      <img src="{{asset('public/images/ABS_logo.png')}}" style="width:150px; left:60px;top:70px" id="logo"">
                      <img src="{{asset('public/images/Absvietnam.png')}}" style="width:550px; left:220px;top:100px" id="Absvietnam" >
                      <img src="{{asset('public/images/khatvong.png')}}" style="height: 50px;left:210px;top:190px;" id="khatvong">
                      <img src="{{asset('public/images/gach.png')}}" style=" height: 18px;top: 205px;left: 400px;" id="gach1" >
                      <img src="{{asset('public/images/Niemtin.png')}}" style="height: 50px;left:430px;top:190px;" id="Niemtin" >
                      <img src="{{asset('public/images/gach.png')}}" style="height: 18px;top: 205px;left: 595px;" id="gach2" >
-                     <img src="{{asset('public/images/toasang.png')}}" style="height: 50px;left:620px;top:190px;" id="toasang" >
+                     <img src="{{asset('public/images/toasang.png')}}" style="height: 50px;left:620px;top:190px;" id="toasang" > -->
                   </li>
                   <!-- Arrows -->
                   <nav class="anim-arrows">
@@ -31,7 +31,9 @@ $sliders = DB::table('slider')->select()->where('status',1)->where('com','gioi-t
                <image src="{{asset('public/images/banner2.jpg')}}" class="img-header">
                <style>
                   .anim-slider-23 {
-                  background-image: url(public/images/bg.png);
+                  background-image: url({{asset('public/images/banner01.jpg')}});
+                  background-repeat: no-repeat;
+                  background-size: 100% 100%;
                   list-style-type: none;
                   position: relative;
                   overflow: hidden;
