@@ -41,6 +41,7 @@
     <link href="{{asset('public/css/style00.css')}}" rel="stylesheet"/>
     <link href="{{asset('public/css/setmedia.css')}}" rel="stylesheet"/>
     <link href="{{asset('public/css/slick.css')}}" rel="stylesheet"/>
+    <link href="{{asset('public/css/phone.css')}}" rel="stylesheet"/>
 
     <link rel="stylesheet" href="{{asset('public/css/jquery.animateSlider.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/demo1.css')}}">
