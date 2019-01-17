@@ -42,16 +42,18 @@ class IndexController extends Controller {
 		$setting =DB::table('setting')->select()->where('id',1)->get()->first();
 		$about = DB::table('about')->where('com','gioi-thieu')->first();
 		$list_abouts = DB::table('gioithieu')->get();
-		$products = DB::table('news')->where('status',1)->where('com','anh-cong-trinh')->take(5)->orderBy('id','desc')->get();
+		$chinhanh = DB::table('chinhanh')->get();
 		$video = DB::table('video')->first();
 		$about_first = DB::table('gioithieu')->first();
+		$images = DB::table('news')->where('status',1)->where('com','hinh-anh')->take(5)->orderBy('id','desc')->get();
+		$image_hot = DB::table('news')->where('status',1)->where('com','hinh-anh')->orderBy('id','desc')->first();
 		$title = $setting->title;
 		$keyword = $setting->keyword;
 		$description = $setting->description;		
 		$com = 'index';
 		// End cấu hình SEO
 		$img_share = asset('upload/hinhanh/'.$setting->photo);
-		return view('templates.index_tpl', compact('com','keyword','description','title','img_share','partners','products','categories_home','about_first','news','about','video','list_abouts'));
+		return view('templates.index_tpl', compact('com','keyword','description','title','img_share','partners','images','categories_home','about_first','news','about','video','list_abouts','image_hot','chinhanh'));
 	}
 	public function getProduct(Request $req)
 	{
@@ -199,7 +201,7 @@ class IndexController extends Controller {
 	public function getNews()
 	{
 		
-		$tintuc = DB::table('news')->select()->where('status',1)->where('com','tin-tuc')->orderby('id','desc')->paginate(10);		
+		$tintuc = DB::table('news')->select()->where('status',1)->where('com','tin-tuc')->orderby('id','desc')->get();		
 		
 		$com='tin-tuc';
 		// Cấu hình SEO
@@ -245,7 +247,7 @@ class IndexController extends Controller {
 		if(!empty($news_detail)){			
 			$cate_pro = DB::table('product_categories')->where('status',1)->where('parent_id',0)->orderby('id','asc')->get();			
 			$com='tin-tuc';
-			$newsSameCate = DB::table('news')->where('status',1)->where('com','tin-tuc')->take(6)->get();
+			$newsSameCate = DB::table('news')->where('status',1)->where('com','tin-tuc')->take(8)->get();
 			// Cấu hình SEO
 			if(!empty($news_detail->title)){
 				$title = $news_detail->title;
@@ -317,62 +319,20 @@ class IndexController extends Controller {
 		}
 	}
 
-	public function getListThiCong($alias)
+	public function gallary()
 	{
-		$tintuc_cate = DB::table('news_categories')->select()->where('status',1)->where('com','thi-cong')->where('alias',$alias)->first();
-		if(!empty($tintuc_cate)){
-			$data = DB::table('news')->select()->where('status',1)->where('cate_id',$tintuc_cate->id)->orderBy('id','desc')->paginate(18);			
-			if(!empty($tintuc_cate->title)){
-				$title = $tintuc_cate->title;
-			}else{
-				$title = $tintuc_cate->name;
-			}			
-			$keyword = $tintuc_cate->keyword;
-			$description = $tintuc_cate->description;
-			$img_share = asset('upload/news/'.$tintuc_cate->photo);
+		$gallaries = DB::table('news')->where('com','hinh-anh')->orderBy('id','desc')->get();
+		$title = "Thư viện ảnh";
 			// End cấu hình SEO
-			return view('templates.thicong_list', compact('data','tintuc_cate','banner_danhmuc','keyword','description','title','img_share','tintuc_moinhat_detail','hot_news', 'cateNews'));
-		}else{
-			return redirect()->route('getErrorNotFount');
-		}
-	}
-	public function getThiCongDetail($alias)
-	{
-		$news_detail = DB::table('news')->where('status',1)->where('com','thi-cong')->where('alias',$alias)->first();		
-		if(!empty($news_detail)){			
-			$news_cate = DB::table('news_categories')->where('id', $news_detail->cate_id)->first();	
-			$postSame = DB::table('news')->where('status',1)->where('cate_id', $news_detail->cate_id)->take(5)->orderBy('id','desc')->get();
-			// dd($postSame);	
-			$com='thi-cong';			
-			// Cấu hình SEO
-			if(!empty($news_detail->title)){
-				$title = $news_detail->title;
-			}else{
-				$title = $news_detail->name;
-			}
-			$keyword = $news_detail->keyword;
-			$description = $news_detail->description;
-			$img_share = asset('upload/news/'.$news_detail->photo);
-			return view('templates.thicong_detail', compact('news_detail','com','keyword','description','title','img_share','postSame','news_cate'));
-		}else{
-			return redirect()->route('getErrorNotFount');
-		}
-	}
-	public function congTrinh()
-	{
-		$data = DB::table('news')->where('com', 'anh-cong-trinh')->where('status',1)->orderBy('id','desc')->get();
-		$title = "Ảnh công trình";
-		return view('templates.congtrinh', compact('data', 'title'));
-	}
-	public function congTrinhDetail($alias)
-	{
-		$news_detail = DB::table('news')->select()->where('status',1)->where('com','anh-cong-trinh')->where('alias',$alias)->first();
+			return view('templates.gallary', compact('gallaries','keyword','description','title'));
 		
+	}
+	public function gallaryDetail($alias)
+	{
+		$news_detail = DB::table('news')->where('status',1)->where('com','hinh-anh')->where('alias',$alias)->first();		
 		if(!empty($news_detail)){			
-						
-			$com='anh-cong-trinh';
-			$newsSameCate = DB::table('news')->where('status',1)->where('com','anh-cong-trinh')->orderBy('id','desc')->get();
-
+			$album_hinh = DB::table('images')->select()->where('news_id',$news_detail->id)->orderby('id','asc')->get();	
+			$com='hinh-anh';			
 			// Cấu hình SEO
 			if(!empty($news_detail->title)){
 				$title = $news_detail->title;
@@ -382,43 +342,12 @@ class IndexController extends Controller {
 			$keyword = $news_detail->keyword;
 			$description = $news_detail->description;
 			$img_share = asset('upload/news/'.$news_detail->photo);
-
-			return view('templates.congtrinh_detail', compact('news_detail','com','keyword','description','title','img_share','newsSameCate'));
+			return view('templates.gallary_detail', compact('news_detail','com','keyword','description','title','img_share','postSame','album_hinh'));
 		}else{
 			return redirect()->route('getErrorNotFount');
 		}
 	}
-
-	public function congNghe()
-	{
-		$data = DB::table('news')->where('status',1)->where('com','chuyen-giao')->orderBy('id','desc')->get();
-		$title = "Chuyển giao công nghệ";
-		return view('templates.congnghe', compact('title', 'data'));
-	}
-
-	public function congNgheDetail($alias)
-	{
-		$news_detail = DB::table('news')->select()->where('status',1)->where('com','chuyen-giao')->where('alias',$alias)->first();		
-		if(!empty($news_detail)){			
-						
-			$com='chuyen-giao';
-			$newsSameCate = DB::table('news')->where('status',1)->where('com','chuyen-giao')->orderBy('id','desc')->get();
-			// Cấu hình SEO
-			if(!empty($news_detail->title)){
-				$title = $news_detail->title;
-			}else{
-				$title = $news_detail->name;
-			}
-			$keyword = $news_detail->keyword;
-			$description = $news_detail->description;
-			$img_share = asset('upload/news/'.$news_detail->photo);
-
-			return view('templates.congnghe_detail', compact('news_detail','com','keyword','description','title','img_share','newsSameCate'));
-		}else{
-			return redirect()->route('getErrorNotFount');
-		}
-
-	}
+	
 	public function postGuidonhang(Request $request)
 	{
 		$setting = Cache::get('setting');

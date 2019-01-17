@@ -24,7 +24,7 @@
           <form name="frmAdd" method="post" action="{{asset('backend/chinhanh/edit/'.$chinhanh->id)}}" enctype="multipart/form-data">
               <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
               
-              <div class="col-md-12">
+              <!-- <div class="col-md-12">
                 <div class="form-group @if ($errors->first('fImages')!='') has-error @endif">
                   <div class="form-group">
                     <img src="{{ asset('upload/hinhanh/'.$chinhanh->photo) }}" onerror="this.src='{{asset('public/admin_assets/images/no-image.jpg')}}'" width="200"  alt="NO PHOTO" />
@@ -35,7 +35,7 @@
                     <p class="help-block">Width:225px - Height: 162px</p>
                     
                 </div>    
-              </div>              
+              </div>    -->           
               <div class="clearfix"></div>
               <div class="col-md-6">
 
@@ -47,17 +47,17 @@
                   <label for="">Địa chỉ</label>
                   <input type="text" name="txtAddress" class="form-control" value="{{$chinhanh->address}}">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="">Số điện thoại</label>
                   <input type="text" name="txtPhone" class="form-control" value="{{$chinhanh->phone}}">
-                </div>
+                </div> -->
               </div>
               
               <div class="col-md-6">
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="">Bản đồ</label>
                   <input type="text" name="map" class="form-control" value="{{$chinhanh->map}}">
-                </div>
+                </div> -->
               </div>
             <div class="clearfix"></div>
             <div class="box-footer">

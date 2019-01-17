@@ -149,13 +149,14 @@
 	            <div class="clearfix"></div>
 
 			    <div class="col-md-6">
-			    	
-			    	<!-- <div class="form-group">
+			    	@if($_GET['type']=='hinh-anh')
+			    	<div class="form-group">
 					    <label>
 				        	<input type="checkbox" name="noibat" >Nổi bật
 				    	</label>
 					</div>
-					@if($_GET['type']!='tin-tuc' && $_GET['type']!='tuyen-dung')
+					@endif
+					<!-- @if($_GET['type']!='tin-tuc' && $_GET['type']!='tuyen-dung')
 					<div class="form-group">
 					    <label>
 				        	<input type="checkbox" name="home"> Hiển thị trang chủ

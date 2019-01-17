@@ -154,17 +154,17 @@ $sliders = DB::table('slider')->select()->where('status',1)->where('com','gioi-t
                   <div class="row">
                      <div class="col-md-6 col-xs-12">
                         <h2 class="tit_about_home xkld_tit fadeInUp wow">
-                           <a href="http://www.absvietnam.com/thu-vien-anh.html">Thư viện ảnh</a>
+                           <a href="{{url('thu-vien-anh')}}">Thư viện ảnh</a>
                         </h2>
                      </div>
                      <div class="clearfix clearfix-10"></div>
                      <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="box_album_hot fadeInUp wow">
-                           <a href="http://www.absvietnam.com/hoi-thao-abs-viet-nam-20-11.html" class="img_album_hot">
-                           <img class="w_100" src="images/IMG_2392_resize.JPG" alt=""/>
+                           <a href="{{url('thu-vien-anh/'.$image_hot->alias.'.html')}}" class="img_album_hot">
+                           <img class="w_100" src="{{asset('upload/news/'.$image_hot->photo)}}" alt=""/>
                            </a>
                            <div class="clearfix"></div>
-                           <h3 class="name_album_hot"><a href="http://www.absvietnam.com/hoi-thao-abs-viet-nam-20-11.html">Hội thao ABS Việt Nam 20-11</a></h3>
+                           <h3 class="name_album_hot"><a href="{{url('thu-vien-anh/'.$image_hot->alias.'.html')}}">{{$image_hot->name}}</a></h3>
                         </div>
                      </div>
                      <div class="col-md-6 col-sm-6 col-xs-12">
@@ -264,14 +264,12 @@ $sliders = DB::table('slider')->select()->where('status',1)->where('com','gioi-t
                         <div class="col-md-4 col-sm-4 col-xs-12">
                            <div class="add_cpn">
                               <span class="name_cpn">{{$setting->company}}</span><br/>
+                              @foreach($chinhanh as $cn)
                               <span class="txt_add_cpn">
                               <i class="fa fa-map-marker icon_cpn"></i>
-                              <span>VPGD: Tầng 12 - Tòa nhà ADI (Vietcombank), đường Tố Hữu, Vạn Phúc, Hà Đông, Hà Nội, Việt Nam</span>
+                              <span>{{$cn->name}}: {{$cn->address}}</span>
                               </span>
-                              <span class="txt_add_cpn">
-                              <i class="fa fa-map-marker icon_cpn"></i>
-                              <span>TTĐT: Tầng 1, BT3-VT22, Khu đô thị Xa La, Phường Phúc La, Quận Hà Đông, Hà Nội, Việt Nam</span>
-                              </span>
+                              @endforeach
                               <span class="txt_add_cpn">
                               <i class="glyphicon glyphicon-phone-alt icon_cpn"></i>
                               <span>Tel: {{$setting->phone}} - {{$setting->hotline}}</span>
@@ -290,7 +288,7 @@ $sliders = DB::table('slider')->select()->where('status',1)->where('com','gioi-t
                            </div>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-12">
-                           
+                           <div class="box_map_home">{!! $setting->iframemap !!}</div>
                         </div>
                      </div>
                   </div>

@@ -40,6 +40,7 @@
     <link href="{{asset('public/css/style_menu_right.css')}}" rel="stylesheet"/>
     <link href="{{asset('public/css/style00.css')}}" rel="stylesheet"/>
     <link href="{{asset('public/css/setmedia.css')}}" rel="stylesheet"/>
+    <link href="{{asset('public/css/slick.css')}}" rel="stylesheet"/>
 
     <link rel="stylesheet" href="{{asset('public/css/jquery.animateSlider.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/demo1.css')}}">
@@ -81,6 +82,9 @@
 
     <!-- Page Scroll to id plugin -->
       <script src="{{asset('public/js/menu_right.js')}}"></script>
+      <script src="{{asset('public/js/slick.min.js')}}"></script>
+      <script src="{{asset('public/js/script.js')}}"></script>
+      
      
       <script type="text/javascript " src="{{asset('public/js/add-js.js')}}"></script>
       <script type="text/javascript " src="{{asset('public/js/owl.carousel.js')}} "></script>

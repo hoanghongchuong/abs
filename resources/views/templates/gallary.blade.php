@@ -14,18 +14,18 @@
             <div class="container_content">
                 <div class="content_about">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h2 class="tit_about_home xkld_tit fadeInUp wow" style="visibility: visible; animation-name: fadeInUp;"><a href="{{url('tin-tuc')}}">Thị trường XKLĐ Việt Nam</a></h2>
+                        <h2 class="tit_about_home xkld_tit fadeInUp wow" style="visibility: visible; animation-name: fadeInUp;"><a href="{{url('tin-tuc')}}">Thư viện ảnh</a></h2>
                         <div class="clearfix clearfix-10"></div>
                         <ul class="list_xkld_home">
-                            @foreach($tintuc as $item)
+                            @foreach($gallaries as $item)
                             <li class="fadeInDown wow" style="visibility: visible; animation-name: fadeInDown;">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <a class="box_xkld_home" href="{{url('tin-tuc/'.$item->alias.'.html')}}">
+                                    <a class="box_xkld_home" href="{{url('thu-vien-anh/'.$item->alias.'.html')}}">
                                         <img class="img_xkld_home" src="{{asset('upload/news/'.$item->photo)}}" alt="">
                                         <div class="sub_skld_home">
-                                            <h3 class="name_xkld_home"><span>{{$item->name}}</span></h3>
+                                            <h3 class="name_xkld_home" style="margin-top: 20px;"><span>{{$item->name}}</span></h3>
                                             <div class="clearfix"></div>
-                                            <div class="des_xkld_home">{!! $item->mota !!}</div>
+                                            <!-- <div class="des_xkld_home">{!! $item->mota !!}</div> -->
                                         </div>
                                     </a>
                                 </div>

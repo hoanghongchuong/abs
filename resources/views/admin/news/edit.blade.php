@@ -167,14 +167,16 @@
 				        	<input type="checkbox" name="status" {!! (!isset($data->status) || $data->status==1)?'checked="checked"':'' !!}> Hiển thị
 				    	</label>
 				    </div>
-				    <!-- <div class="form-group">
+				    @if($_GET['type']=='hinh-anh')
+				    <div class="form-group">
 					    <label>
 				        	<input type="checkbox" name="noibat" 
 				        	{{ ($data->noibat==1)?'checked="checked"':'' }}> 
 				        	Nổi bật
 				    	</label>
 					</div>
-					@if($_GET['type']!='tin-tuc' && $_GET['type']!='tuyen-dung')
+					@endif
+					<!-- @if($_GET['type']!='tin-tuc' && $_GET['type']!='tuyen-dung')
 			    	<div class="form-group">
 					    <label>
 				        	<input type="checkbox" name="home" {{ ($data->home==1)?'checked="checked"':'' }}> Hiển thị trang chủ

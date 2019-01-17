@@ -29,11 +29,11 @@
           @endif
           <form name="frmAdd" method="post" action="{{route('admin.chinhanh.postCreate')}}" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
-             <div class="form-group col-md-12">
+             <!-- <div class="form-group col-md-12">
                 <label for="file">File ảnh</label>
                   <input type="file" id="file" name="fImages" >
                   <p class="help-block">Width:225px - Height: 162px</p>
-              </div>              
+              </div>  -->             
               <div class="clearfix"></div>             
             <div class="clearfix"></div>
             <div class="col-md-6">
@@ -42,24 +42,24 @@
                 <input type="text" name="txtName" class="form-control" value="">
               </div>
             </div>
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
               <div class="form-group">
                 <label for="">Số điện thoại</label>
                 <input type="text" name="txtPhone" class="form-control" value="">
               </div>
-            </div>
+            </div> -->
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Địa chỉ</label>
                 <input type="text" name="txtAddress" class="form-control" value="">
               </div>
             </div>
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
               <div class="form-group">
                 <label for="">Bản đồ</label>
                 <input type="text" name="map" class="form-control" value="">
               </div>
-            </div>
+            </div> -->
           <div class="clearfix"></div>
           <div class="box-footer">
             <div class="row">

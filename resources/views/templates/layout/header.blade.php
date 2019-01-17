@@ -52,7 +52,7 @@
           
             <nav id="navigation-menu" class="hidden-xs">
                <ul>
-                  <li><a href="#header" class="sc_icon _mPS2id-h mPS2id-clicked mPS2id-highlight mPS2id-highlight-first mPS2id-highlight-last">Trang chủ</a></li>
+                  <li><a href="{{url('')}}/#header" class="sc_icon _mPS2id-h mPS2id-clicked mPS2id-highlight mPS2id-highlight-first mPS2id-highlight-last">Trang chủ</a></li>
                   <li><a href="{{url('/')}}/#section-1" class="sc_icon _mPS2id-h">Giới thiệu </a></li>
                   <li><a href="{{url('/')}}/#section-2" class="sc_icon _mPS2id-h">Thông tin đơn hàng</a></li>
                   <li><a href="{{url('/')}}/#section-3" class="sc_icon _mPS2id-h">Tin tức</a></li>

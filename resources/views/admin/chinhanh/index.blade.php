@@ -34,7 +34,7 @@
                 <th class="text-center with_dieuhuong">Stt</th>
                 
                 <th>Tên chi nhánh</th>
-                <th>Số điện thoại</th>
+                <!-- <th>Số điện thoại</th> -->
                 <th>Địa chỉ</th>
                 <!-- <th>Bản đồ</th> -->
                 <th class="text-center with_dieuhuong">Sửa</th>
@@ -47,7 +47,7 @@
                 <!-- <td><input type="checkbox" name="chon" id="chon" value="" class="chon" /></td> -->
                 <td>{{$key+1}}</td>
                 <td>{{$item->name}}</td>
-                <td>{{$item->phone}}</td>                            
+                <!-- <td>{{$item->phone}}</td>                             -->
                 <td>{{$item->address}}</td>                            
                 <!-- <td>{{$item->map}}</td> -->
                 <td class="text-center with_dieuhuong">
