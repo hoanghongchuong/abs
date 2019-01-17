@@ -44,11 +44,14 @@
 									
 									<div class="clearfix"></div>
 									
-							    	
+							    	<div class="form-group">
+								      	<label for="desc">Tên</label>
+								      	<input type="text" name="name" value="{{$data->name}}" class="form-control">
+									</div>
 									<div class="form-group">
-								      	<label for="desc">Link</label>
+								      	<label for="desc">Mã</label>
 								      	<input type="text" name="link" class="form-control" value="{{$data->link}}">
-								</div>
+									</div>
 								
 							</div>
 							<div class="clearfix"></div>

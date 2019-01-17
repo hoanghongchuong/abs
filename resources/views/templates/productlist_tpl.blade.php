@@ -4,31 +4,64 @@
     $setting = Cache::get('setting');
     $cateProducts = Cache::get('cateProducts');
 ?>
-
-<div class="content-home" style="background: url('{{asset('public/images/bg.jpg')}}'); background-size: cover;">
-    <div class="container">
-        <div class="row">
-            
-        </div>
-    </div>
-</div>
-<div class="box-category-list content-home">
-    <div class="container">
-        <div class="content-wraper">
-            <div class="box-content-cate">
-                <h1 class="title-category"><span>{{$product_cate->name}}</span></h1>
-                <p class="under_line"><span><img src="{{asset('public/images/line.png')}}"></span></p>
-                <div class="list-item-category">
-                    @foreach($products as $item)
-                    <div class="col-md-4 box">
-                        <a href="{{url('san-pham/'.$item->alias.'.html')}}" title="{{$item->name}}"><img src="{{asset('upload/product/'.$item->photo)}}">
-                            <p class="name_product">{{$item->name}}</p>
-                        </a>
+<article id="body_home">
+    <section class="sc_content">
+         <div id="section-2">
+            <div class="container_content">
+               <div class="page_recruit">
+                  <ul class="back_link">
+                     <li><a href="{{url('')}}">Trang chủ</a></li>
+                     <li><a href="javascript:;">Thông tin đơn hàng</a></li>
+                  </ul>
+                  <div class="clearfix"></div>
+                    <div class="tab-content tab_content_recruit" id="ketqua">
+                        @foreach($cate_pro as $k=>$cate)
+                        <div id="tabs_recruit{{$k}}" class="tab-pane fade in @if($cate->id == $product_cate->id) active @endif">
+                            {!! $cate->mota !!}                              
+                            <div class="clearfix clearfix-20"></div>
+                            <div class="table-responsive table_recruit">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>Tên đơn hàng</th>
+                                            <th>Số lượng</th>
+                                            <th>Địa điểm</th>
+                                            <th>Mức lương</th>
+                                            <th>Ngày thi tuyển</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($cate->products as $key=>$item)
+                                        <tr>
+                                            <td>{{$key+1}}</td>
+                                            <td>{{$item->name}}</td>
+                                            <td>{{$item->numb}}</td>
+                                            <td>{{$item->address}}</td>
+                                            <td>{{$item->price}}</td>
+                                            <td>{{$item->date_test}}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
+                  <ul class="nav nav-tabs nav_tabs_recruit">
+                    @foreach($cate_pro as $k=>$cate)
+                        <li class="@if($cate->id == $product_cate->id) active @endif">
+                            <a data-toggle="tab" href="#tabs_recruit{{$k}}" data-id="{{$cate->id}}">
+                            <span class="icon_rc_page"><img src="{{asset('upload/product/'.$cate->photo)}}" alt=""></span>
+                            <span class="txt_rc_page"><span>{{$cate->name}}</span></span>
+                            </a>
+                        </li>
                     @endforeach
-                </div>
+                  </ul>
+               </div>
             </div>
-        </div>
-    </div>
-</div>
+         </div>
+    </section>
+</article>
+
 @endsection

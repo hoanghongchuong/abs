@@ -44,16 +44,19 @@ class IndexController extends Controller {
 		$list_abouts = DB::table('gioithieu')->get();
 		$chinhanh = DB::table('chinhanh')->get();
 		$video = DB::table('video')->first();
+		$videos = DB::table('video')->orderBy('id','desc')->get();
+		
 		$about_first = DB::table('gioithieu')->first();
-		$images = DB::table('news')->where('status',1)->where('com','hinh-anh')->take(5)->orderBy('id','desc')->get();
+		$images = DB::table('news')->where('status',1)->where('com','hinh-anh')->take(4)->orderBy('id','desc')->get();
 		$image_hot = DB::table('news')->where('status',1)->where('com','hinh-anh')->orderBy('id','desc')->first();
+		$category_products = DB::table('product_categories')->where('com','san-pham')->get();		
 		$title = $setting->title;
 		$keyword = $setting->keyword;
 		$description = $setting->description;		
 		$com = 'index';
 		// End cấu hình SEO
 		$img_share = asset('upload/hinhanh/'.$setting->photo);
-		return view('templates.index_tpl', compact('com','keyword','description','title','img_share','partners','images','categories_home','about_first','news','about','video','list_abouts','image_hot','chinhanh'));
+		return view('templates.index_tpl', compact('com','keyword','description','title','img_share','category_products','images','categories_home','about_first','news','about','video','list_abouts','image_hot','chinhanh','videos'));
 	}
 	public function getProduct(Request $req)
 	{
@@ -75,21 +78,22 @@ class IndexController extends Controller {
 	public function getProductList($id, Request $req)
 	{		
 		
-		$cate_pro = DB::table('product_categories')->where('status',1)->where('parent_id',0)->orderby('id','asc')->get();
+		$cate_pro = ProductCate::where('status',1)->where('parent_id',0)->orderby('id','asc')->get();
         $com = 'san-pham';
         $product_cate = ProductCate::select('*')->where('status', 1)->where('alias', $id)->where('com','san-pham')->first();        
-        if (!empty($product_cate)) {            
-        	$cate_parent = DB::table('product_categories')->where('id', $product_cate->parent_id)->first();
+        if (!empty($product_cate)) {  
 
-        	$cateChilds = DB::table('product_categories')->where('parent_id', $product_cate->id)->get();
+        	// $cate_parent = DB::table('product_categories')->where('id', $product_cate->parent_id)->first();
+
+        	// $cateChilds = DB::table('product_categories')->where('parent_id', $product_cate->id)->get();
         	
-        	$array_cate[] = $product_cate->id;
-        	if($cateChilds){
-        		foreach($cateChilds as $cate){
-        			$array_cate[] = $cate->id;
-        		}
-        	}        	
-        	$products = Products::whereIn('cate_id', $array_cate)->orderBy('id','desc')->paginate(18);
+        	// $array_cate[] = $product_cate->id;
+        	// if($cateChilds){
+        	// 	foreach($cateChilds as $cate){
+        	// 		$array_cate[] = $cate->id;
+        	// 	}
+        	// }        	
+        	// $products = Products::whereIn('cate_id', $array_cate)->orderBy('id','desc')->paginate(18);
             if (!empty($product_cate->title)) {
                 $title = $product_cate->title;
             } else {
@@ -736,5 +740,17 @@ class IndexController extends Controller {
 		return view('templates.banchay', compact('cate_pro', 'colors', 'products', 'price_from', 'price_to', 'viewx', 'sortx', 'colorx', 'appends'));
 	}
 
-	
+	public function video()
+	{
+		$data = DB::table('video')->orderBy('id','desc')->get();
+		$title = 'Video';
+		return view('templates.video', compact('title','data'));
+	}
+	public function videoDetail($alias)
+	{
+		$data = DB::table('video')->where('alias', $alias)->first();
+		$newsSameCate = DB::table('video')->orderBy('id','desc')->take(8)->get();
+		$title = $data->name;
+		return view('templates.video_detail', compact('data', 'title','newsSameCate'));
+	}
 }

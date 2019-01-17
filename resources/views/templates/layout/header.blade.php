@@ -38,7 +38,7 @@
                            <a href="{{url('/')}}/#section-3" class="menu-link">Tin tức</a>
                         </li>
                         <li class="menu-item">
-                           <a href="" class="menu-link">Hình ảnh hoạt động</a>
+                           <a href="" class="menu-link">Hình ảnh - video</a>
                         </li>
                         <li class="menu-item active">
                            <a href="{{url('/')}}/#section-5" class="menu-link">Liên hệ</a>
@@ -56,7 +56,7 @@
                   <li><a href="{{url('/')}}/#section-1" class="sc_icon _mPS2id-h">Giới thiệu </a></li>
                   <li><a href="{{url('/')}}/#section-2" class="sc_icon _mPS2id-h">Thông tin đơn hàng</a></li>
                   <li><a href="{{url('/')}}/#section-3" class="sc_icon _mPS2id-h">Tin tức</a></li>
-                  <li><a href="{{url('/')}}/#section-4" class="sc_icon _mPS2id-h">Hình ảnh hoạt động</a></li>
+                  <li><a href="{{url('/')}}/#section-4" class="sc_icon _mPS2id-h">Hình ảnh - video</a></li>
                   <li><a href="{{url('/')}}/#section-5" class="sc_icon _mPS2id-h">Liên hệ</a></li>
                </ul>
             </nav>

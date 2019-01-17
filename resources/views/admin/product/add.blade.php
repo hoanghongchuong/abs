@@ -76,7 +76,7 @@
 									</div>
 									<div class="form-group">
 								      	<label for="ten">Mức lương</label>
-								      	<input type="text" name="txtPrice"  onkeyup="FormatNumber(this);"  onKeyPress="return isNumberKey(event)" value=""  class="form-control" />
+								      	<input type="text" name="txtPrice"value=""  class="form-control" />
 									</div>
 									<!-- <div class="form-group">
 								      	<label for="ten">Giá cũ</label>
@@ -84,7 +84,6 @@
 									</div> -->
 									
 								</div>
-
 								<div class="col-md-6 col-xs-12">
 									<!-- <div class="form-group">
 								      	<label for="desc">Mô tả</label>

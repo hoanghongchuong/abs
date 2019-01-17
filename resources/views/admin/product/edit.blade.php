@@ -26,15 +26,15 @@
       			<div class="nav-tabs-custom">
 	                <ul class="nav nav-tabs">
 	                  	<li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">Thông tin chung</a></li>
-	                  	<li><a href="#tab_2" data-toggle="tab" aria-expanded="true">Nội dung</a></li>
+	                  	<!-- <li><a href="#tab_2" data-toggle="tab" aria-expanded="true">Nội dung</a></li>
 	                  	<li><a href="#tab_3" data-toggle="tab" aria-expanded="true">Album hình</a></li>
-	                  	<li><a href="#tab_4" data-toggle="tab" aria-expanded="true">SEO</a></li>
+	                  	<li><a href="#tab_4" data-toggle="tab" aria-expanded="true">SEO</a></li> -->
 	                </ul>
 	                <div class="tab-content">
 	                  	<div class="tab-pane active" id="tab_1">
 	                  		<div class="row">
 		                  		<div class="col-md-6 col-xs-12">
-									<div class="form-group @if ($errors->first('fImages')!='') has-error @endif">
+									<div class="form-group hidden @if ($errors->first('fImages')!='') has-error @endif">
 										<div class="form-group">
 											<img src="{{ asset('upload/product/'.$data->photo) }}" onerror="this.src='{{asset('public/admin_assets/images/no-image.jpg')}}'" width="200"  alt="NO PHOTO" />
 											<input type="hidden" name="img_current" value="{!! @$data->photo !!}">
@@ -72,26 +72,38 @@
 								      	@endif
 									</div>
 									<div class="form-group">
-								      	<label for="ten">Giá bán</label>
-								      	<input type="text" name="txtPrice" onkeyup="FormatNumber(this);"  onKeyPress="return isNumberKey(event)" value="{{ number_format($data->price,0,'',',') }}"  class="form-control" />
+								      	<label for="ten">Mức lương</label>
+								      	<input type="text" name="txtPrice"value="{{ number_format($data->price,0,'',',') }}"  class="form-control" />
 									</div>
 									<div class="form-group">
+								      	<label for="ten">Số lượng</label>
+								      	<input type="text" name="numb" value="{{$data->numb}}"  class="form-control" />
+									</div>
+									<div class="form-group">
+								      	<label for="ten">Địa điểm</label>
+								      	<input type="text" name="address" value="{{$data->address}}"  class="form-control" />
+									</div>
+									<div class="form-group">
+								      	<label for="ten">Ngày thi tuyển</label>
+								      	<input type="date" name="date_test" value="{{$data->date_test}}"  class="form-control" />
+									</div>
+									<!-- <div class="form-group">
 								      	<label for="ten">Giá cũ</label>
 								      	<input type="text" name="txtPriceOld" onkeyup="FormatNumber(this);"  onKeyPress="return isNumberKey(event)" value="{{ number_format($data->price_old,0,'',',') }}"  class="form-control" />
 									</div>
 									<div class="form-group">
 								      	<label for="ten">Mã SP</label>
 								      	<input type="text" name="txtCode"  value="{{ $data->code }}"  class="form-control" />
-									</div>
+									</div> -->
 								</div>								
 							</div>
 							<div class="row">
-								<div class="col-md-12 col-xs-12">									
+								<!-- <div class="col-md-12 col-xs-12">									
 									<div class="form-group">
 								      	<label for="desc">Mô tả</label>
 								      	<textarea name="txtDesc" rows="5" id="txtContent" class="form-control">{{ $data->mota }}</textarea>
 									</div>									
-								</div>
+								</div> -->
 							</div>
 							<div class="clearfix"></div>
 	                  	</div><!-- /.tab-pane -->

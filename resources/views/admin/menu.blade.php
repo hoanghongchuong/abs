@@ -30,7 +30,7 @@
             <li><a href="backend/contact"><i class="fa fa-envelope"></i> <span>Quản lý liên hệ</span></a></li>
             <!-- <li><a href="backend/newsletter?type=newsletter"><i class="fa fa-circle-o"></i> <span>Đăng ký nhận tin</span></a></li> -->
             <li><a href="backend/chinhanh"><i class="fa fa-envelope"></i><span>Chi nhánh</span></a></li>
-            <li><a href="backend/slider?type=gioi-thieu"><i class="fa fa-circle-o"></i> <span>Quản lý slider</span></a></li>
+            <!-- <li><a href="backend/slider?type=gioi-thieu"><i class="fa fa-circle-o"></i> <span>Quản lý slider</span></a></li> -->
             <!-- <li class="treeview">
               <a href="#">
                 <i class="fa fa-pie-chart"></i>

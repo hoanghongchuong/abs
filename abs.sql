@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 14, 2019 lúc 04:36 AM
+-- Thời gian đã tạo: Th1 17, 2019 lúc 10:22 AM
 -- Phiên bản máy phục vụ: 10.1.36-MariaDB
 -- Phiên bản PHP: 7.2.10
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `citybuild`
+-- Cơ sở dữ liệu: `abs`
 --
 
 -- --------------------------------------------------------
@@ -227,6 +227,14 @@ CREATE TABLE `chinhanh` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Đang đổ dữ liệu cho bảng `chinhanh`
+--
+
+INSERT INTO `chinhanh` (`id`, `name`, `website`, `phone`, `address`, `map`, `photo`, `created_at`, `updated_at`) VALUES
+(1, 'VPGD', NULL, NULL, 'Tầng 12 - Tòa nhà ADI (Vietcombank), đường Tố Hữu, Vạn Phúc, Hà Đông, Hà Nội, Việt Nam', NULL, NULL, '2019-01-17 04:56:22', '2019-01-17 04:56:22'),
+(2, 'TTĐT', NULL, NULL, 'Tầng 1, BT3-VT22, Khu đô thị Xa La, Phường Phúc La, Quận Hà Đông, Hà Nội, Việt Nam', NULL, NULL, '2019-01-17 04:56:39', '2019-01-17 04:56:39');
+
 -- --------------------------------------------------------
 
 --
@@ -369,6 +377,7 @@ CREATE TABLE `gioithieu` (
   `name` varchar(250) DEFAULT NULL,
   `alias` varchar(250) DEFAULT NULL,
   `image` text,
+  `photo` text,
   `mota` text,
   `content` text,
   `title` varchar(250) DEFAULT NULL,
@@ -383,10 +392,12 @@ CREATE TABLE `gioithieu` (
 -- Đang đổ dữ liệu cho bảng `gioithieu`
 --
 
-INSERT INTO `gioithieu` (`id`, `name`, `alias`, `image`, `mota`, `content`, `title`, `keyword`, `description`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Về công ty', 've-cong-ty', '1509935372_home-1.png', '<h3 class=\"vk-about__title text-uppercase animation fadeIn animation-active\">C&Ocirc;NG TY TNHH SẢN XUẤT NHỰA CH&Acirc;U &Acirc;U</h3>\r\n<p class=\"animation fadeIn delay1 animation-active\">B&ecirc;n cạnh việc sản xuất, ch&uacute;ng t&ocirc;i c&ograve;n nhập khẩu v&agrave; ph&acirc;n phối c&aacute;c sản phẩm như: phụ kiện HDPE h&agrave;n nối đầu, phụ kiện HDPE h&agrave;n điện trở, c&aacute;c loại m&aacute;y h&agrave;n ống nhựa HDPE, m&aacute;y thử &aacute;p lực&hellip;</p>', '<p class=\"animation fadeIn animation-active\">B&ecirc;n cạnh việc sản xuất, ch&uacute;ng t&ocirc;i c&ograve;n nhập khẩu v&agrave; ph&acirc;n phối c&aacute;c sản phẩm như: phụ kiện HDPE h&agrave;n nối đầu, phụ kiện HDPE h&agrave;n điện trở, c&aacute;c loại m&aacute;y h&agrave;n ống nhựa HDPE, m&aacute;y thử &aacute;p lực&hellip;</p>\r\n<p class=\"animation fadeIn animation-active\">Tại C&ocirc;ng ty TNHH sản xuất nhựa Ch&acirc;u &Acirc;u ch&uacute;ng t&ocirc;i tin tưởng rằng chỉ c&oacute; nghi&ecirc;m ngặt tu&acirc;n theo quy tr&igrave;nh quản l&yacute; chất lượng để tạo ra những sản phẩm đạt chất lượng cao v&agrave; dịch vụ tốt, ch&uacute;ng t&ocirc;i mới chiếm được l&ograve;ng tin của kh&aacute;ch h&agrave;ng đồng thời x&aacute;c lập vị tr&iacute; của m&igrave;nh tr&ecirc;n thị trường, để người Việt c&oacute; thể tin d&ugrave;ng h&agrave;ng Việt</p>\r\n<div class=\"row\">\r\n<div class=\"col-lg-9\">\r\n<p class=\"animation fadeIn delay1 animation-active\"><strong>Lịch sử h&igrave;nh th&agrave;nh</strong></p>\r\n<p class=\"animation fadeIn delay1 animation-active\">C&ocirc;ng ty TNHH Thiết Bị Điện Nước H&agrave; Th&agrave;nh được ch&iacute;nh thức th&agrave;nh lập v&agrave; đi v&agrave;o hoạt động từ th&aacute;ng 3 năm 2009. Ng&agrave;nh nghề ch&iacute;nh của ch&uacute;ng t&ocirc;i l&agrave; sản xuất thiết bị điện nước mang thương hiệu HATHACO. Nh&agrave; m&aacute;y sản xuất phụ kiện ống nhựa HDPE đặt tại Th&agrave;nh phố Hải Dương. Với nhiều m&aacute;y &eacute;p phun, m&aacute;y &eacute;p gioăng cao su v&agrave; hơn 200 bộ khu&ocirc;n sản phẩm kh&aacute;c nhau, ch&uacute;ng t&ocirc;i đ&atilde; v&agrave; đang sản xuất cung cấp cho thị trường c&aacute;c loại phụ kiện HDPE vặn ren v&agrave; đai khởi thủy k&iacute;ch thước từ D20 đến D110 mang thương hiệu HATHACO đạt ti&ecirc;u chuẩn Dụng cụ bằng nhựa tiếp x&uacute;c trực tiếp thực phẩm của Bộ Y Tế: QCVN 12-1:2011/BYT v&agrave; tu&acirc;n theo Quy tr&igrave;nh quản l&yacute; chất lượng TCVN ISO 9001:2008.</p>\r\n<p class=\"animation fadeIn delay1 animation-active\">B&ecirc;n cạnh việc sản xuất, ch&uacute;ng t&ocirc;i c&ograve;n nhập khẩu v&agrave; ph&acirc;n phối c&aacute;c sản phẩm như: phụ kiện HDPE h&agrave;n nối đầu, phụ kiện HDPE h&agrave;n điện trở, c&aacute;c loại m&aacute;y h&agrave;n ống nhựa HDPE, m&aacute;y thử &aacute;p lực&hellip;</p>\r\n</div>\r\n</div>', NULL, NULL, NULL, 1, '2017-11-06 02:33:45', '2017-11-05 19:33:45'),
-(2, 'Về nhà xưởng', 've-nha-xuong', NULL, NULL, '<p class=\"animation fadeIn animation-active\">B&ecirc;n cạnh việc sản xuất, ch&uacute;ng t&ocirc;i c&ograve;n nhập khẩu v&agrave; ph&acirc;n phối c&aacute;c sản phẩm như: phụ kiện HDPE h&agrave;n nối đầu, phụ kiện HDPE h&agrave;n điện trở, c&aacute;c loại m&aacute;y h&agrave;n ống nhựa HDPE, m&aacute;y thử &aacute;p lực&hellip;</p>\r\n<p class=\"animation fadeIn animation-active\">Tại C&ocirc;ng ty TNHH sản xuất nhựa Ch&acirc;u &Acirc;u ch&uacute;ng t&ocirc;i tin tưởng rằng chỉ c&oacute; nghi&ecirc;m ngặt tu&acirc;n theo quy tr&igrave;nh quản l&yacute; chất lượng để tạo ra những sản phẩm đạt chất lượng cao v&agrave; dịch vụ tốt, ch&uacute;ng t&ocirc;i mới chiếm được l&ograve;ng tin của kh&aacute;ch h&agrave;ng đồng thời x&aacute;c lập vị tr&iacute; của m&igrave;nh tr&ecirc;n thị trường, để người Việt c&oacute; thể tin d&ugrave;ng h&agrave;ng Việt</p>\r\n<div class=\"row\">\r\n<div class=\"col-lg-9\">\r\n<p class=\"animation fadeIn delay1 animation-active\"><strong>Lịch sử h&igrave;nh th&agrave;nh</strong></p>\r\n<p class=\"animation fadeIn delay1 animation-active\">C&ocirc;ng ty TNHH Thiết Bị Điện Nước H&agrave; Th&agrave;nh được ch&iacute;nh thức th&agrave;nh lập v&agrave; đi v&agrave;o hoạt động từ th&aacute;ng 3 năm 2009. Ng&agrave;nh nghề ch&iacute;nh của ch&uacute;ng t&ocirc;i l&agrave; sản xuất thiết bị điện nước mang thương hiệu HATHACO. Nh&agrave; m&aacute;y sản xuất phụ kiện ống nhựa HDPE đặt tại Th&agrave;nh phố Hải Dương. Với nhiều m&aacute;y &eacute;p phun, m&aacute;y &eacute;p gioăng cao su v&agrave; hơn 200 bộ khu&ocirc;n sản phẩm kh&aacute;c nhau, ch&uacute;ng t&ocirc;i đ&atilde; v&agrave; đang sản xuất cung cấp cho thị trường c&aacute;c loại phụ kiện HDPE vặn ren v&agrave; đai khởi thủy k&iacute;ch thước từ D20 đến D110 mang thương hiệu HATHACO đạt ti&ecirc;u chuẩn Dụng cụ bằng nhựa tiếp x&uacute;c trực tiếp thực phẩm của Bộ Y Tế: QCVN 12-1:2011/BYT v&agrave; tu&acirc;n theo Quy tr&igrave;nh quản l&yacute; chất lượng TCVN ISO 9001:2008.</p>\r\n<p class=\"animation fadeIn delay1 animation-active\">B&ecirc;n cạnh việc sản xuất, ch&uacute;ng t&ocirc;i c&ograve;n nhập khẩu v&agrave; ph&acirc;n phối c&aacute;c sản phẩm như: phụ kiện HDPE h&agrave;n nối đầu, phụ kiện HDPE h&agrave;n điện trở, c&aacute;c loại m&aacute;y h&agrave;n ống nhựa HDPE, m&aacute;y thử &aacute;p lực&hellip;</p>\r\n</div>\r\n</div>', NULL, NULL, NULL, 1, '2017-11-08 02:12:34', '2017-11-07 19:12:34'),
-(3, 'Về chi nhánh', 've-chi-nhanh', NULL, NULL, '<p class=\"animation fadeIn animation-active\">B&ecirc;n cạnh việc sản xuất, ch&uacute;ng t&ocirc;i c&ograve;n nhập khẩu v&agrave; ph&acirc;n phối c&aacute;c sản phẩm như: phụ kiện HDPE h&agrave;n nối đầu, phụ kiện HDPE h&agrave;n điện trở, c&aacute;c loại m&aacute;y h&agrave;n ống nhựa HDPE, m&aacute;y thử &aacute;p lực&hellip;</p>\r\n<p class=\"animation fadeIn animation-active\">Tại C&ocirc;ng ty TNHH sản xuất nhựa Ch&acirc;u &Acirc;u ch&uacute;ng t&ocirc;i tin tưởng rằng chỉ c&oacute; nghi&ecirc;m ngặt tu&acirc;n theo quy tr&igrave;nh quản l&yacute; chất lượng để tạo ra những sản phẩm đạt chất lượng cao v&agrave; dịch vụ tốt, ch&uacute;ng t&ocirc;i mới chiếm được l&ograve;ng tin của kh&aacute;ch h&agrave;ng đồng thời x&aacute;c lập vị tr&iacute; của m&igrave;nh tr&ecirc;n thị trường, để người Việt c&oacute; thể tin d&ugrave;ng h&agrave;ng Việt</p>\r\n<div class=\"row\">\r\n<div class=\"col-lg-9\">\r\n<p class=\"animation fadeIn delay1 animation-active\"><strong>Lịch sử h&igrave;nh th&agrave;nh</strong></p>\r\n<p class=\"animation fadeIn delay1 animation-active\">C&ocirc;ng ty TNHH Thiết Bị Điện Nước H&agrave; Th&agrave;nh được ch&iacute;nh thức th&agrave;nh lập v&agrave; đi v&agrave;o hoạt động từ th&aacute;ng 3 năm 2009. Ng&agrave;nh nghề ch&iacute;nh của ch&uacute;ng t&ocirc;i l&agrave; sản xuất thiết bị điện nước mang thương hiệu HATHACO. Nh&agrave; m&aacute;y sản xuất phụ kiện ống nhựa HDPE đặt tại Th&agrave;nh phố Hải Dương. Với nhiều m&aacute;y &eacute;p phun, m&aacute;y &eacute;p gioăng cao su v&agrave; hơn 200 bộ khu&ocirc;n sản phẩm kh&aacute;c nhau, ch&uacute;ng t&ocirc;i đ&atilde; v&agrave; đang sản xuất cung cấp cho thị trường c&aacute;c loại phụ kiện HDPE vặn ren v&agrave; đai khởi thủy k&iacute;ch thước từ D20 đến D110 mang thương hiệu HATHACO đạt ti&ecirc;u chuẩn Dụng cụ bằng nhựa tiếp x&uacute;c trực tiếp thực phẩm của Bộ Y Tế: QCVN 12-1:2011/BYT v&agrave; tu&acirc;n theo Quy tr&igrave;nh quản l&yacute; chất lượng TCVN ISO 9001:2008.</p>\r\n<p class=\"animation fadeIn delay1 animation-active\">B&ecirc;n cạnh việc sản xuất, ch&uacute;ng t&ocirc;i c&ograve;n nhập khẩu v&agrave; ph&acirc;n phối c&aacute;c sản phẩm như: phụ kiện HDPE h&agrave;n nối đầu, phụ kiện HDPE h&agrave;n điện trở, c&aacute;c loại m&aacute;y h&agrave;n ống nhựa HDPE, m&aacute;y thử &aacute;p lực&hellip;</p>\r\n</div>\r\n</div>', 'Chi nhánh', 'chi nhánh', 'sf s', 1, '2017-11-08 02:12:39', '2017-11-07 19:12:39');
+INSERT INTO `gioithieu` (`id`, `name`, `alias`, `image`, `photo`, `mota`, `content`, `title`, `keyword`, `description`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Giới thiệu về công ty', 'gioi-thieu-ve-cong-ty', '1547540694_about1.png', '1547630699_banner_about.jpg', '<p>C&ocirc;ng ty Cổ phần ABS Việt Nam được th&agrave;nh lập bởi đội ngũ l&atilde;nh đạo t&acirc;m huyết, những c&aacute;n bộ, nh&acirc;n vi&ecirc;n gi&agrave;u kinh nghiệm, chuy&ecirc;n m&ocirc;n vững v&agrave;ng v&agrave; c&oacute; bề d&agrave;y hoạt động trong lĩnh vực đưa người lao động đi l&agrave;m việc ở nước ngo&agrave;i.</p>', '<p>C&ocirc;ng ty Cổ phần ABS Việt Nam được th&agrave;nh lập bởi đội ngũ l&atilde;nh đạo t&acirc;m huyết, những c&aacute;n bộ, nh&acirc;n vi&ecirc;n gi&agrave;u kinh nghiệm, chuy&ecirc;n m&ocirc;n vững v&agrave;ng v&agrave; c&oacute; bề d&agrave;y hoạt động trong lĩnh vực đưa người lao động đi l&agrave;m việc ở nước ngo&agrave;i.<br />&nbsp; &nbsp; Với định hướng trở th&agrave;nh c&ocirc;ng ty số 1 về dịch vụ trong ng&agrave;nh xuất khẩu lao động tại Việt Nam, ch&uacute;ng t&ocirc;i kh&ocirc;ng ngừng s&aacute;ng tạo trong c&aacute;c hoạt động đối ngoại, ho&agrave;n thiện bộ m&aacute;y tổ chức v&agrave; đặc biệt ch&uacute; trọng tới c&ocirc;ng t&aacute;c đ&agrave;o tạo lao động cũng như tạo điều kiện tốt nhất để to&agrave;n bộ nh&acirc;n vi&ecirc;n c&oacute; cơ hội ph&aacute;t triển năng lực của m&igrave;nh.<br />&nbsp; &nbsp; Gi&aacute; trị cốt l&otilde;i của ABS:</p>\r\n<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Với nh&acirc;n vi&ecirc;n:&nbsp;<strong>Approach &ndash; Be the best &ndash; Share</strong></div>\r\n<div>&nbsp;ABS Việt Nam sẽ l&agrave; nơi để mỗi nh&acirc;n vi&ecirc;n sẽ tự đưa ra mục ti&ecirc;u nghề nghiệp, thỏa sức s&aacute;ng tạo để tiếp cận mục ti&ecirc;u, trở th&agrave;nh người giỏi nhất trong vị tr&iacute; của m&igrave;nh v&agrave; chia sẻ cơ hội th&agrave;nh c&ocirc;ng với đồng nghiệp.</div>\r\n<div>- &nbsp;ABS cho thực tập sinh:&nbsp;<strong>Ambition &ndash; Belief &ndash; Shining</strong></div>\r\n<div>Thực tập sinh của ABS VN sẽ phải l&agrave; những c&aacute; nh&acirc;n biết ho&agrave;i b&atilde;o v&agrave; tham vọng thực hiện ước mơ, ng&ocirc;i trường ABS VN sẽ l&agrave; nơi tạo niềm tin v&agrave; động lực gi&uacute;p c&aacute;c em tỏa s&aacute;ng theo c&aacute;ch của ri&ecirc;ng m&igrave;nh.<br />- &nbsp;ABS cho kh&aacute;ch h&agrave;ng:&nbsp;<strong>Advantage &ndash; Benchmark &ndash; Satisfaction</strong><br />Khởi điểm từ những giải ph&aacute;p nh&acirc;n sự vượt trội với mỗi doanh nghiệp, ABS VN sẽ kh&ocirc;ng ngừng đưa ra c&aacute;c ti&ecirc;u chuẩn v&agrave; ph&eacute;p thử mới để li&ecirc;n tục cải tiến giải ph&aacute;p hiện tại với mong muốn cao nhất l&agrave; lời tri &acirc;n từ ph&iacute;a kh&aacute;ch h&agrave;ng.</div>', NULL, NULL, NULL, 1, '2019-01-16 09:24:59', '2019-01-16 09:24:59'),
+(2, 'Khối tuyển dụng', 'khoi-tuyen-dung', '1547540954_about1.png', NULL, '<p>Mạng lưới c&aacute;n bộ tuyển dụng của ABS Việt Nam hoạt động t&iacute;ch cực tới từng cơ sở đ&agrave;o tạo nghề, c&aacute;c cơ quan giới thiệu việc l&agrave;m tại địa phương để phối hợp tuyển chọn trực tiếp lực lượng lao động&nbsp;</p>', '<p>Mạng lưới c&aacute;n bộ tuyển dụng của ABS Việt Nam hoạt động t&iacute;ch cực tới từng cơ sở đ&agrave;o tạo nghề, c&aacute;c cơ quan giới thiệu việc l&agrave;m tại địa phương để phối hợp tuyển chọn trực tiếp lực lượng lao động ph&ugrave; hợp nhất với y&ecirc;u cầu từng đơn h&agrave;ng đặc th&ugrave;.<br />Ngo&agrave;i ra, ch&uacute;ng t&ocirc;i c&ograve;n tuyển chọn lao động qua c&aacute;c k&ecirc;nh b&aacute;o ch&iacute;, internet, hệ thống website, fanpage của c&ocirc;ng ty, gi&uacute;p truyền tải điều kiện thi tuyển nhanh ch&oacute;ng v&agrave; dễ d&agrave;ng tới đ&uacute;ng đối tượng người lao động c&oacute; nhu cầu l&agrave;m việc tại Nhật Bản.</p>', NULL, NULL, NULL, 1, '2019-01-15 08:29:14', '2019-01-15 08:29:14'),
+(3, 'KHỐI PHÁT TRIỂN THỊ TRƯỜNG', 'khoi-phat-trien-thi-truong', '1547541178_about2.png', NULL, '<p>Đội ngũ nh&acirc;n sự khối ph&aacute;t triển thị trường được v&iacute; như gương mặt đại diện của C&ocirc;ng ty. Đ&oacute; l&agrave; những người trẻ với nền tảng kiến thức tốt, được đ&agrave;o tạo b&agrave;i bản, lu&ocirc;n tr&agrave;n đầy năng lượng v&agrave; sự&nbsp;</p>', '<p>Đội ngũ nh&acirc;n sự khối ph&aacute;t triển thị trường được v&iacute; như gương mặt đại diện của C&ocirc;ng ty. Đ&oacute; l&agrave; những người trẻ với nền tảng kiến thức tốt, được đ&agrave;o tạo b&agrave;i bản, lu&ocirc;n tr&agrave;n đầy năng lượng v&agrave; sự nhạy b&eacute;n để nhanh ch&oacute;ng nắm bắt v&agrave; đ&aacute;p ứng nhu cầu của đối t&aacute;c kh&aacute;ch h&agrave;ng.<br />Tại ABS Việt Nam, b&ecirc;n cạnh chất lượng lao động, ch&uacute;ng t&ocirc;i lu&ocirc;n đưa ra những y&ecirc;u cầu khắt khe nhất cho chất lượng phục vụ kh&aacute;ch h&agrave;ng. Tất cả thể hiện ở c&ocirc;ng t&aacute;c hậu cần chuy&ecirc;n nghiệp, nồng hậu tiếp đ&oacute;n kh&aacute;ch tới thị s&aacute;t, phỏng vấn trực tiếp tại văn ph&ograve;ng c&ocirc;ng ty v&agrave; những xử l&yacute; linh hoạt, kịp thời khi đối ứng với kh&aacute;ch h&agrave;ng tại c&aacute;c nghiệp đo&agrave;n, x&iacute; nghiệp nơi thực tập sinh l&agrave;m việc.</p>', NULL, NULL, NULL, 1, '2019-01-15 08:32:58', '2019-01-15 08:32:58'),
+(4, 'TRUNG TÂM ĐÀO TẠO', 'trung-tam-dao-tao', '1547541271_about3.png', NULL, '<p>L&agrave; tr&aacute;i tim, l&agrave; cốt l&otilde;i của mọi hoạt động nghiệp vụ tại ABS Việt Nam, trung t&acirc;m đ&agrave;o tạo lu&ocirc;n được Ban l&atilde;nh đạo C&ocirc;ng ty d&agrave;nh ưu ti&ecirc;n h&agrave;ng đầu trong việc tập trung mọi nguồn lực để tăng&nbsp;</p>', '<p>L&agrave; tr&aacute;i tim, l&agrave; cốt l&otilde;i của mọi hoạt động nghiệp vụ tại ABS Việt Nam, trung t&acirc;m đ&agrave;o tạo lu&ocirc;n được Ban l&atilde;nh đạo C&ocirc;ng ty d&agrave;nh ưu ti&ecirc;n h&agrave;ng đầu trong việc tập trung mọi nguồn lực để tăng cường chất lượng đ&agrave;o tạo tiếng cũng như định hướng nghề nghiệp cho thực tập sinh.<br />&nbsp;<br />Ch&uacute;ng t&ocirc;i lu&ocirc;n hướng tới lợi &iacute;ch của X&iacute; nghiệp, Nghiệp đo&agrave;n v&agrave; thực tập sinh. Nỗ lực đ&agrave;o tạo thực tập sinh trước xuất cảnh về lễ nghi, t&aacute;c phong trong cuộc sống để c&aacute;c bạn c&oacute; thể sống v&agrave; l&agrave;m việc ở 1 đất nước coi trọng lễ nghi số 1 thế giới.<br />Đội ngũ chuy&ecirc;n gia, gi&aacute;o vi&ecirc;n của Trung t&acirc;m sẽ đưa ra nhiều dạng b&agrave;i tập, b&agrave;i học v&agrave; c&aacute;c t&igrave;nh huống thực tế, khuyến kh&iacute;ch tinh thần tự gi&aacute;c trong học tập v&agrave; r&egrave;n luyện của học vi&ecirc;n. Mục ti&ecirc;u sau kh&oacute;a học, học vi&ecirc;n c&oacute; thể thực h&agrave;nh nghe hiểu tiếng Nhật v&agrave; hội thoại tr&ocirc;i chảy đ&uacute;ng ngữ ph&aacute;p &aacute;p dụng linh hoạt v&agrave;o c&ocirc;ng việc thực tế.</p>', NULL, NULL, NULL, 1, '2019-01-15 08:34:31', '2019-01-15 08:34:31'),
+(5, 'VĂN PHÒNG ĐẠI DIỆN TẠI NHẬT BẢN', 'van-phong-dai-dien-tai-nhat-ban', '1547541327_about4.png', NULL, '<p>ABS Việt Nam c&oacute; văn ph&ograve;ng đại diện tại c&aacute;c tỉnh, th&agrave;nh phố lớn tại Nhật Bản như: Nagoya, Osaka, Okayama, Fukuoka&hellip;<br />Ch&uacute;ng t&ocirc;i nỗ lực ph&aacute;t triển mạng lưới nh&acirc;n sự&nbsp;</p>', '<p>ABS Việt Nam c&oacute; văn ph&ograve;ng đại diện tại c&aacute;c tỉnh, th&agrave;nh phố lớn tại Nhật Bản như: Nagoya, Osaka, Okayama, Fukuoka&hellip;<br />Ch&uacute;ng t&ocirc;i nỗ lực ph&aacute;t triển mạng lưới nh&acirc;n sự đại diện rộng khắp, gi&uacute;p nhanh ch&oacute;ng đối ứng với c&aacute;c x&iacute; nghiệp, nghiệp đo&agrave;n v&agrave; hỗ trợ giải quyết kịp thời những kh&oacute; khăn ban đầu khi c&aacute;c bạn thực tập sinh mới nhập cảnh, cũng như động vi&ecirc;n chia sẻ kinh nghiệm để c&aacute;c bạn trẻ nhanh ch&oacute;ng h&ograve;a nhập với m&ocirc;i trường mới, bắt kịp với cường độ l&agrave;m việc nghi&ecirc;m t&uacute;c v&agrave; đ&aacute;p ứng được y&ecirc;u cầu khắt khe của đơn vị sử dụng lao động.</p>', NULL, NULL, NULL, 1, '2019-01-15 08:35:27', '2019-01-15 08:35:27');
 
 -- --------------------------------------------------------
 
@@ -421,7 +432,11 @@ INSERT INTO `images` (`id`, `product_id`, `news_id`, `name`, `alias`, `photo`, `
 (6, 2, NULL, NULL, NULL, '1542856872_5 - Copy - Copy.jpg', 1, NULL, NULL, 0, '2018-11-22 03:21:12', '2018-11-22 03:21:12'),
 (8, 1, NULL, NULL, NULL, '1542859805_111.jpg', 1, NULL, NULL, 0, '2018-11-22 04:10:05', '2018-11-22 04:10:05'),
 (10, 3, NULL, NULL, NULL, '1546567276_c3.jpg', 1, NULL, NULL, 0, '2019-01-04 02:01:16', '2019-01-04 02:01:16'),
-(11, 3, NULL, NULL, NULL, '1546567276_c4.jpg', 1, NULL, NULL, 0, '2019-01-04 02:01:16', '2019-01-04 02:01:16');
+(11, 3, NULL, NULL, NULL, '1546567276_c4.jpg', 1, NULL, NULL, 0, '2019-01-04 02:01:16', '2019-01-04 02:01:16'),
+(12, 0, 22, NULL, NULL, '1547606003_anh1.JPG', 1, NULL, NULL, 0, '2019-01-16 02:33:23', '2019-01-16 02:33:23'),
+(13, 0, 22, NULL, NULL, '1547606003_anh2.jpg', 1, NULL, NULL, 0, '2019-01-16 02:33:23', '2019-01-16 02:33:23'),
+(14, 0, 23, NULL, NULL, '1547696067_anh1.JPG', 1, NULL, NULL, 0, '2019-01-17 03:34:27', '2019-01-17 03:34:27'),
+(15, 0, 23, NULL, NULL, '1547696067_anh2.jpg', 1, NULL, NULL, 0, '2019-01-17 03:34:27', '2019-01-17 03:34:27');
 
 -- --------------------------------------------------------
 
@@ -570,10 +585,10 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `cate_id`, `user_id`, `name`, `alias`, `photo`, `background`, `mota`, `content`, `status`, `noibat`, `home`, `title`, `keyword`, `description`, `com`, `stt`, `created_at`, `updated_at`) VALUES
-(1, 0, 8, 'Tin tức 1', 'tin-tuc-1', '1547265890_news1.png', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 1, 0, 0, NULL, NULL, NULL, 'tin-tuc', 1, '2019-01-12 04:04:50', '2019-01-12 04:04:50'),
-(2, 0, 8, 'Tin tức 2', 'tin-tuc-2', '1547265901_news2.png', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 1, 0, 0, NULL, NULL, NULL, 'tin-tuc', 2, '2019-01-12 04:05:01', '2019-01-12 04:05:01'),
-(3, 0, 8, 'Tin tức 3', 'tin-tuc-3', '1547265910_news3.png', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 1, 0, 0, NULL, NULL, NULL, 'tin-tuc', 3, '2019-01-12 04:05:10', '2019-01-12 04:05:10'),
-(4, 0, 8, 'Tin tức 4', 'tin-tuc-4', '1547265919_news4.png', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 1, 0, 0, NULL, NULL, NULL, 'tin-tuc', 4, '2019-01-12 04:05:19', '2019-01-12 04:05:19'),
+(1, 0, 8, 'Cơ hội mới cho lao động Việt Nam ở Nhật', 'co-hoi-moi-cho-lao-dong-viet-nam-o-nhat', '1547541995_tintuc1.jpg', '', 'Chế độ mới được thực thi từ ngày 1/7/2010 này quy định thực tập sinh kỹ năng phải ký hợp đồng lao động với doanh nghiệp tiếp nhận trước khi qua Nhật Bản. Do đó, sau khi được cơ quan tiếp nhận phỏng vấn và được chọn làm thực tập sinh kỹ năng thì cần phải ký hợp đồng lao động với doanh nghiệp tiếp nhận.', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 1, 0, 0, NULL, NULL, NULL, 'tin-tuc', 1, '2019-01-15 08:46:35', '2019-01-15 08:46:35'),
+(2, 0, 8, 'Đạt kế hoạch năm 2018 về xuất khẩu lao động', 'dat-ke-hoach-nam-2018-ve-xuat-khau-lao-dong', '1547542038_tintuc2.jpg', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 1, 0, 0, NULL, NULL, NULL, 'tin-tuc', 2, '2019-01-15 08:47:18', '2019-01-15 08:47:18'),
+(3, 0, 8, 'Tin tức 3', 'tin-tuc-3', '1547542085_tintuc3.jpg', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 1, 0, 0, NULL, NULL, NULL, 'tin-tuc', 3, '2019-01-15 08:48:05', '2019-01-15 08:48:05'),
+(4, 0, 8, 'Tin tức 4', 'tin-tuc-4', '1547542100_tintuc2.jpg', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', 1, 0, 0, NULL, NULL, NULL, 'tin-tuc', 4, '2019-01-15 08:48:20', '2019-01-15 08:48:20'),
 (5, 0, 8, 'Cong trình 1', 'cong-trinh-1', '1547281159_news1.png', '', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, 'anh-cong-trinh', 1, '2019-01-12 08:19:19', '2019-01-12 08:19:19'),
 (6, 0, 8, 'Công trình 2', 'cong-trinh-2', '1547281171_news2.png', '', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, 'anh-cong-trinh', 2, '2019-01-12 08:19:31', '2019-01-12 08:19:31'),
 (7, 0, 8, 'Công trình 3', 'cong-trinh-3', '1547281804_news4.png', '', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, 'anh-cong-trinh', 3, '2019-01-12 08:30:04', '2019-01-12 08:30:04'),
@@ -590,7 +605,9 @@ INSERT INTO `news` (`id`, `cate_id`, `user_id`, `name`, `alias`, `photo`, `backg
 (18, 1, 8, 'Thiết kế nội thất demo', 'thiet-ke-noi-that-demo', '1547436122_news1.png', '', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, 'thiet-ke', 5, '2019-01-14 03:22:02', '2019-01-14 03:22:02'),
 (19, 1, 8, 'Thiết kế nội thất demo 4', 'thiet-ke-noi-that-demo-4', '1547436139_p1.png', '', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, 'thiet-ke', 6, '2019-01-14 03:22:19', '2019-01-14 03:22:19'),
 (20, 2, 8, 'Thiết kế ngoại thất demo 1', 'thiet-ke-ngoai-that-demo-1', '1547436250_sv2.png', '', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, 'thiet-ke', 7, '2019-01-14 03:24:10', '2019-01-14 03:24:10'),
-(21, 2, 8, 'Thiết kế ngoại thất demo 2', 'thiet-ke-ngoai-that-demo-2', '1547436272_news2.png', '', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, 'thiet-ke', 8, '2019-01-14 03:24:32', '2019-01-14 03:24:32');
+(21, 2, 8, 'Thiết kế ngoại thất demo 2', 'thiet-ke-ngoai-that-demo-2', '1547436272_news2.png', '', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, 'thiet-ke', 8, '2019-01-14 03:24:32', '2019-01-14 03:24:32'),
+(22, 0, 8, 'Hội thao abs Việt Nam', 'hoi-thao-abs-viet-nam', '1547606003_anh1.JPG', '', NULL, NULL, 1, 1, 0, NULL, NULL, NULL, 'hinh-anh', 1, '2019-01-17 03:40:34', '2019-01-17 03:40:34'),
+(23, 0, 8, 'Cuộc sống của TTS ABS tại Nhật bản', 'cuoc-song-cua-tts-abs-tai-nhat-ban', '1547696067_anh2.jpg', '', NULL, NULL, 1, 0, 0, NULL, NULL, NULL, 'hinh-anh', 2, '2019-01-17 03:34:27', '2019-01-17 03:34:27');
 
 -- --------------------------------------------------------
 
@@ -731,6 +748,9 @@ CREATE TABLE `products` (
   `alias` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `photo` text COLLATE utf8_unicode_ci,
   `price` int(11) NOT NULL DEFAULT '0',
+  `numb` int(11) DEFAULT NULL,
+  `date_test` date DEFAULT NULL,
+  `address` text COLLATE utf8_unicode_ci,
   `sale` int(11) DEFAULT '0',
   `price_old` int(11) DEFAULT '0',
   `mota` longtext COLLATE utf8_unicode_ci,
@@ -756,6 +776,14 @@ CREATE TABLE `products` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `products`
+--
+
+INSERT INTO `products` (`id`, `user_id`, `cate_id`, `code`, `color_id`, `stt`, `name`, `alias`, `photo`, `price`, `numb`, `date_test`, `address`, `sale`, `price_old`, `mota`, `content`, `thuonghieu`, `tinhtrang`, `baohanh`, `properties`, `model`, `namsanxuat`, `ratepoint`, `quatang`, `huongdan`, `vanchuyen`, `noibat`, `spbc`, `com`, `status`, `title`, `keyword`, `description`, `created_at`, `updated_at`) VALUES
+(1, 8, 1, NULL, 'null', 1, 'đơn hàng 1', 'don-hang-1', '', 400000, 347, '2019-01-25', 'Vạn Phúc, Hà Đông, Hà Nọi', 0, 0, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 'san-pham', 1, NULL, NULL, NULL, '2019-01-17 07:32:13', '2019-01-17 07:32:13'),
+(2, 0, 2, NULL, NULL, 2, 'Tuyển 100 công nhân dệt may', 'tuyen-100-cong-nhan-det-may', '', 4000000, 199, '2019-01-20', 'Hà Đông, Hà Nội', 0, 0, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 'san-pham', 1, NULL, NULL, NULL, '2019-01-17 07:32:58', '2019-01-17 07:32:58');
+
 -- --------------------------------------------------------
 
 --
@@ -780,6 +808,15 @@ CREATE TABLE `product_categories` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `product_categories`
+--
+
+INSERT INTO `product_categories` (`id`, `parent_id`, `stt`, `name`, `alias`, `photo`, `noibat`, `mota`, `status`, `lever`, `com`, `title`, `keyword`, `description`, `created_at`, `updated_at`) VALUES
+(1, 0, 1, 'Kiểm hàng hoàn thiện sản phẩm', 'kiem-hang-hoan-thien-san-pham', '1547544899_dg.jpg', 0, NULL, 1, 0, 'san-pham', NULL, NULL, NULL, '2019-01-15 09:34:59', '2019-01-15 09:34:59'),
+(2, 0, 2, 'Dệt may', 'det-may', '1547544784_det.jpg', 0, NULL, 1, 0, 'san-pham', NULL, NULL, NULL, '2019-01-15 09:33:04', '2019-01-15 09:33:04'),
+(3, 0, 3, 'Công nghệ ô tô', 'cong-nghe-o-to', '1547544988_ckoto.jpg', 0, '<p>Nooij dung mo ta&nbsp;</p>', 1, 0, 'san-pham', NULL, NULL, NULL, '2019-01-17 08:05:51', '2019-01-17 08:05:51');
 
 -- --------------------------------------------------------
 
@@ -934,7 +971,7 @@ CREATE TABLE `setting` (
 --
 
 INSERT INTO `setting` (`id`, `name`, `title`, `company`, `website`, `address`, `phone`, `hotline`, `fax`, `email`, `photo`, `photo_footer`, `photo_page`, `favico`, `title_index`, `mota`, `content`, `facebook`, `twitter`, `skype`, `google`, `youtube`, `status`, `toado`, `copyright`, `iframemap`, `codechat`, `analytics`, `keyword`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'City Build', 'City Build', 'City Build', NULL, 'Vạn Phúc, Hà Nội', '0987654321', NULL, NULL, 'acb@gmail.com', '1547262822_logo.png', '1547262822_logo_footer.png', '1542771860_logo1.png', '1547262822_logo.png', NULL, NULL, NULL, 'https://www.facebook.com/FacebookforDevelopers/', 'https://twitter.com/?lang=vi', NULL, 'https://plus.google.com/?hl=vi', NULL, 1, NULL, NULL, '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.7749747466096!2d105.82069491439643!3d21.00165548601309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac8429ac32cb%3A0x592668996cef591f!2zMzE1IFRyxrDhu51uZyBDaGluaCwgS2jGsMahbmcgVGjGsOG7o25nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1531887013298\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>', NULL, NULL, NULL, NULL, '2019-01-12 03:13:42', '2019-01-12 03:13:42');
+(1, 'ABS', 'ABS', 'ABS', NULL, 'Vạn Phúc, Hà Nội', '0987654321', NULL, NULL, 'acb@gmail.com', '1547622614_ABS_logo.png', '1547262822_logo_footer.png', '1542771860_logo1.png', '1547622621_ABS_logo.png', NULL, NULL, NULL, 'https://www.facebook.com/FacebookforDevelopers/', 'https://twitter.com/?lang=vi', NULL, 'https://plus.google.com/?hl=vi', NULL, 1, NULL, NULL, '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.7749747466096!2d105.82069491439643!3d21.00165548601309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac8429ac32cb%3A0x592668996cef591f!2zMzE1IFRyxrDhu51uZyBDaGluaCwgS2jGsMahbmcgVGjGsOG7o25nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1531887013298\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>', NULL, NULL, NULL, NULL, '2019-01-16 07:10:21', '2019-01-16 07:10:21');
 
 -- --------------------------------------------------------
 
@@ -1056,7 +1093,8 @@ CREATE TABLE `video` (
 --
 
 INSERT INTO `video` (`id`, `name`, `alias`, `link`, `photo`, `mota`, `content`, `created_at`, `updated_at`) VALUES
-(1, NULL, NULL, '<iframe width=\"100%\" height=\"415\" src=\"https://www.youtube.com/embed/nvy3XBg-tmU\" frameborder=\"0\" allowfullscreen></iframe>', NULL, NULL, NULL, '2017-10-15 20:31:58', '2019-01-12 07:24:47');
+(1, 'Giới thiệu', 'gioi-thieu', 'JQLNdLAgm68', NULL, NULL, NULL, '2019-01-17 08:23:12', '2019-01-17 08:55:28'),
+(2, 'Video 2', 'video-2', '8rDw4kyH5vM', NULL, NULL, NULL, '2019-01-17 08:40:25', '2019-01-17 08:55:24');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -1333,7 +1371,7 @@ ALTER TABLE `campaign_cards`
 -- AUTO_INCREMENT cho bảng `chinhanh`
 --
 ALTER TABLE `chinhanh`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `colors`
@@ -1375,13 +1413,13 @@ ALTER TABLE `footer`
 -- AUTO_INCREMENT cho bảng `gioithieu`
 --
 ALTER TABLE `gioithieu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `lienket`
@@ -1399,7 +1437,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT cho bảng `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT cho bảng `newsletter`
@@ -1429,13 +1467,13 @@ ALTER TABLE `partner`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `product_categories`
 --
 ALTER TABLE `product_categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `province`
@@ -1483,7 +1521,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `video`
 --
 ALTER TABLE `video`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

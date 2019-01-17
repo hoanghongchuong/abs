@@ -101,19 +101,19 @@ $sliders = DB::table('slider')->select()->where('status',1)->where('com','gioi-t
                      <h2 class="tit_employment fadeInDown wow text-left" style="float: left;"><a href="{{url('don-hang')}}">Thông tin đơn hàng</a></h2>
                      <div class="clearfix clearfix-10"></div>
                      <div class="list_employment_home">
-                        
+                        @foreach($category_products as $cate)
                         <div class="col-md-4 col-sm-4 col-xs-6 col-480-12">
                            <div class="row">
                               <div class="box_employment_home fadeInUp wow">
-                                 <a href="http://www.absvietnam.com/dong-goi-cong-nghiep.html" class="img_employment_home h_5374">
-                                 <img class="w_100" src="images/dg.jpg" alt=""/>
+                                 <a href="{{url('don-hang/'.$cate->alias)}}" class="img_employment_home h_5374">
+                                 <img class="w_100" src="{{asset('upload/product/'.$cate->photo)}}" alt=""/>
                                  </a>
                                  <div class="clearfix"></div>
-                                 <h3 class="name_employment_home"><a href="http://www.absvietnam.com/dong-goi-cong-nghiep.html">Đóng gói công nghiệp</a></h3>
+                                 <h3 class="name_employment_home"><a href="{{url('don-hang/'.$cate->alias)}}">{{$cate->name}}</a></h3>
                               </div>
                            </div>
                         </div>
-                        
+                        @endforeach
                      </div>
                   </div>
                </div>
@@ -170,59 +170,52 @@ $sliders = DB::table('slider')->select()->where('status',1)->where('com','gioi-t
                      <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="list_album_home">
                            <div class="row_4">
+                              @foreach($images as $img)
                               <div class="col-md-4 col-sm-4 col-xs-6">
                                  <div class="row_11">
-                                    <a href="http://www.absvietnam.com/cuoc-song-tts-abs-tai-nhat-ban-2.html" class="box_album_home fadeInUp wow">
+                                    <a href="{{url('thu-vien-anh/'.$img->alias.'.html')}}">
                                        <span class="img_album_home h_5652">
-                                       <img class="w_100" src="http://www.absvietnam.com/images/media/hinh-anh-nen-phong-canh-nhat-ban-5.jpg" alt=""/>
+                                       <img class="w_100" src="{{asset('upload/news/'.$img->photo)}}" alt=""/>
                                        </span>
                                        <div class="clearfix"></div>
-                                       <h3 class="name_album_home"><span> Cuộc Sống TTS ABS Tại Nhật Bản</span></h3>
+                                       <h3 class="name_album_home"><span> {{$img->name}}</span></h3>
                                     </a>
                                  </div>
                               </div>
-                              <div class="col-md-4 col-sm-4 col-xs-6">
-                                 <div class="row_11">
-                                    <a href="http://www.absvietnam.com/cuoc-song-hang-ngay-tai-abs.html" class="box_album_home fadeInUp wow">
-                                       <span class="img_album_home h_5652">
-                                       <img class="w_100" src="http://www.absvietnam.com/images/media/1._Xep_hang_.jpg" alt=""/>
-                                       </span>
-                                       <div class="clearfix"></div>
-                                       <h3 class="name_album_home"><span> Cuộc sống hằng ngày tại ABS</span></h3>
-                                    </a>
-                                 </div>
-                              </div>
+                              @endforeach
                            </div>
                         </div>
                      </div>
                      <div class="clearfix"></div>
                      <div class="col-md-6 col-xs-12">
-                        <h2 class="tit_about_home xkld_tit fadeInUp wow"><a href="http://www.absvietnam.com/video.html">Video</a></h2>
+                        <h2 class="tit_about_home xkld_tit fadeInUp wow"><a href="{{url('video')}}">Video</a></h2>
                      </div>
                      <div class="clearfix clearfix-10"></div>
                      <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="list_album_home">
                            <div class="row_4">
+                           @for($i = 0; $i< count($videos); $i++)
                               <div class="col-md-4 col-sm-4 col-xs-6">
                                  <div class="row_11">
-                                    <a href="http://www.absvietnam.com/video-tong-ket-cuoi-nam-2017.html" class="box_album_home fadeInUp wow">
+                                    <a href="{{url('video/'.@$videos[$i]->alias)}}" class="box_album_home fadeInUp wow">
                                        <span class="img_album_home h_5652">
-                                       <img class="w_100" src="http://img.youtube.com/vi/5YIwTti2kCA/hqdefault.jpg" alt=""/>
+                                       <img class="w_100" src="http://img.youtube.com/vi/{{@$videos[$i]->link}}/hqdefault.jpg" alt=""/>
                                        <div class="clearfix"></div>
-                                       <h3 class="name_album_home"><span>Video tổng kết cuối năm 2017</span></h3>
+                                       <h3 class="name_album_home"><span>{{@$videos[$i]->name}}</span></h3>
                                     </a>
                                  </div>
                               </div>
+                           @endfor
                            </div>
                         </div>
                      </div>
                      <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="box_album_hot fadeInUp wow">
-                           <a href="http://www.absvietnam.com/gioi-thieu-cong-ty-abs-viet-nam.html" class="img_album_hot">
-                           <img class="w_100" src="http://img.youtube.com/vi/2DPrQi6mS88/hqdefault.jpg" alt=""/>
+                           <a href="{{url('video/'.@$video->alias)}}" class="img_album_hot">
+                           <img class="w_100" src="http://img.youtube.com/vi/{{@$video->link}}/hqdefault.jpg" alt=""/>
                            </a>
                            <div class="clearfix"></div>
-                           <h3 class="name_album_hot"><a href="http://www.absvietnam.com/gioi-thieu-cong-ty-abs-viet-nam.html">Giới thiệu công ty Abs Việt Nam</a></h3>
+                           <h3 class="name_album_hot"><a href="{{url('video/'.@$video->alias)}}">{{@$video->name}}</a></h3>
                         </div>
                      </div>
                   </div>

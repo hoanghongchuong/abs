@@ -17,6 +17,8 @@ class VideoController extends Controller
     public function postCreate(Request $request){
         $data = new Video;
         $data->link = $request->link;
+        $data->name = $request->name;
+        $data->alias = changeTitle($request->name);
         $data->save();
     	return redirect(route('admin.video.index'));
     }
@@ -29,6 +31,8 @@ class VideoController extends Controller
     	$data = Video::where('id',$id)->first();
     	
     	$data->link = $request->link;
+        $data->name = $request->name;
+        $data->alias = changeTitle($request->name);
     	$data->save();
     	return redirect(route('admin.video.index'));
     }

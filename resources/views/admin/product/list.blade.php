@@ -50,8 +50,8 @@
                 <th class="text-center with_dieuhuong">Stt</th>
                 <th>Danh mục</th>
                 <th>Tên sản phẩm</th>               
-                <th>Hình ảnh</th>
-                <th>Giá</th>
+                <!-- <th>Hình ảnh</th> -->
+                <th>Mức lương</th>
                 <th class="text-center with_dieuhuong">Hoạt động</th>
                 <th class="text-center with_dieuhuong">Sửa</th>
                 <th class="text-center with_dieuhuong">Xóa</th>
@@ -75,9 +75,9 @@
                   {{$item->name}}
                 </td>
                
-                <td>
+                <!-- <td>
                   <img src="{{ asset('upload/product/'.$item->photo) }}" onerror="this.src='{{ asset('public/admin_assets/images/no-image.jpg') }}';" class="img_product"  alt="NO PHOTO" />
-                </td>
+                </td> -->
                 <td>{{number_format($item->price)}}</td>
                 <td class="text-center with_dieuhuong">
                   <div class="form-group"> 
@@ -86,8 +86,7 @@
                     @else
                       <a href="backend/product/edit?id={{$item->id}}&hienthi={{ time() }}" class="btn btn-danger btn-xs"><i class="fa fa-eye"></i> Hiển thị</a>
                     @endif
-                  </div>
-                  
+                  </div>                  
                 </td>
                 <td class="text-center with_dieuhuong">
                   <i class="fa fa-pencil fa-fw"></i><a href="backend/product/edit?id={{$item->id}}&type={{ @$_GET['type'] }}">Edit</a>

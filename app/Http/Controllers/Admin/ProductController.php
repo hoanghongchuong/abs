@@ -76,8 +76,7 @@ class ProductController extends Controller
         }
        
         $product->mota = $request->txtDesc;
-        $product->photo = $img_name;
-        
+        $product->photo = $img_name;        
         $product->code = $request->txtCode;
         $product->com = $com;
         $product->title = $request->txtTitle;
@@ -85,6 +84,10 @@ class ProductController extends Controller
         $product->keyword = $request->txtKeyword;
         $product->description = $request->txtDescription;
         $product->stt = intval($request->stt);
+
+        $product->numb = $request->numb;
+        $product->address = $request->address;
+        $product->date_test = $request->date_test;
         if($request->status=='on'){
             $product->status = 1;
         }else{
@@ -95,6 +98,7 @@ class ProductController extends Controller
         }else{
             $product->noibat = 0;
         }
+        // dd($product);
         $product->save();
         $product_id = $product->id;
         if ($request->hasFile('detailImg')) {
@@ -255,6 +259,11 @@ class ProductController extends Controller
             $product->description = $request->txtDescription;
             $product->color_id = json_encode($request->colors, JSON_NUMERIC_CHECK);
             $product->stt = intval($request->stt);
+
+            $product->numb = $request->numb;
+            $product->address = $request->address;
+            $product->date_test = $request->date_test;
+
 
             if($request->status=='on'){
                 $product->status = 1;

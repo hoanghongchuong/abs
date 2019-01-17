@@ -29,6 +29,7 @@
               <tr>
                 <!-- <th style="width: 20px;"><input type="checkbox" name="chonhet" class="minimal" id="chonhet" /></th> -->
                 <th class="text-center with_dieuhuong">Stt</th>
+                <td>Tên</td>
                 <th>Link</th>
                 <!-- <th class="text-center with_dieuhuong">Hoạt động</th> -->
                 <th class="text-center with_dieuhuong">Sửa</th>
@@ -40,6 +41,7 @@
               <tr>
                
                 <td class="text-center with_dieuhuong">{{$key+1}}</td>
+                <td>{!! $item->name !!}</td>
                 <td>{!! $item->link !!}</td>
                 <!-- <td></td> -->
                 <td class="text-center with_dieuhuong">

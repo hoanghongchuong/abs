@@ -27,9 +27,9 @@ Route::get('loadmore/project','IndexController@loadmoreProject')->name('loadmore
 
 Route::get('tim-kiem',['as'=>'search', 'uses'=>'IndexController@search']);
 Route::post('newsletter',['as'=>'postNewsletter', 'uses'=>'IndexController@postNewsletter']);
-Route::get('san-pham',['as'=>'getProduct', 'uses'=>'IndexController@getProduct']);
-Route::get('san-pham/{alias}.html','IndexController@getProductDetail')->name('detailProduct');
-Route::get('san-pham/{id}',['as'=>'getProductList', 'uses'=>'IndexController@getProductList']);
+Route::get('don-hang',['as'=>'getProduct', 'uses'=>'IndexController@getProduct']);
+Route::get('don-hang/{alias}.html','IndexController@getProductDetail')->name('detailProduct');
+Route::get('don-hang/{id}',['as'=>'getProductList', 'uses'=>'IndexController@getProductList']);
 Route::get('danh-muc/{alias}', 'IndexController@getProductByCate')->name('detailCategory');
 
 Route::get('product/filter', 'IndexController@productFilder')->name('product.filter');
@@ -67,17 +67,8 @@ Route::get('tin-tuc/{alias}',['as'=>'getListNews', 'uses'=>'IndexController@getL
 Route::get('thu-vien-anh', 'IndexController@gallary');
 Route::get('thu-vien-anh/{alias}.html', 'IndexController@gallaryDetail');
 
-Route::get('thiet-ke',['as'=>'getDesign', 'uses'=>'IndexController@design']);
-Route::get('thiet-ke/{alias}.html',['as'=>'getDesignDetail', 'uses'=>'IndexController@getDesignDetail']);
-Route::get('thiet-ke/{alias}',['as'=>'getListDesign', 'uses'=>'IndexController@getListDesign']);
-
-Route::get('thi-cong',['as'=>'getThiCong', 'uses'=>'IndexController@thiCong']);
-Route::get('thi-cong/{alias}.html',['as'=>'getthiCongDetail', 'uses'=>'IndexController@getThiCongDetail']);
-Route::get('thi-cong/{alias}',['as'=>'getListThiCong', 'uses'=>'IndexController@getListThiCong']);
-
-Route::get('chuyen-giao-cong-nghe', 'IndexController@congNghe');
-Route::get('chuyen-giao-cong-nghe/{alias}.html', 'IndexController@congNgheDetail');
-
+Route::get('video', 'IndexController@video');
+Route::get('video/{alia}', 'IndexController@videoDetail');
 
 Route::get('{id}.html',['as'=>'getProductDetail', 'uses'=>'IndexController@getProductDetail']);
 Route::get('bai-viet/{id}.html',['as'=>'getBaiVietDetail', 'uses'=>'IndexController@getBaiVietDetail']);
